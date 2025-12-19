@@ -2,6 +2,9 @@
 using namespace std;
 
 int main(){
+    freopen("input_lsr_polynomial.txt", "r", stdin);
+    freopen("output_lsr_polynomial.txt", "w", stdout);
+    
     int n, degree;
     cin >> n >> degree;
     
@@ -28,6 +31,10 @@ int main(){
     for(int i = 0; i < m; i++){
         // Make diagonal element 1
         double pivot = A[i][i];
+        if(fabs(pivot) < 1e-10){
+            cout << "Error: System is singular or nearly singular!" << endl;
+            return 1;
+        }
         for(int j = 0; j <= m; j++){
             A[i][j] /= pivot;
         }
@@ -43,6 +50,10 @@ int main(){
         }
     }
     
+    cout << "\n========== POLYNOMIAL LEAST SQUARES REGRESSION ==========" << endl;
+    cout << "Degree: " << degree << endl;
+    cout << "Number of data points: " << n << endl;
+    cout << "\nBest fit polynomial equation:" << endl;
     cout << "y = ";
     for(int i = 0; i <= degree; i++){
         if(i > 0 && A[i][m] >= 0) cout << " + ";

@@ -2,6 +2,9 @@
 using namespace std;
 
 int main(){
+    freopen("input_backwardinterpolation.txt", "r", stdin);
+    freopen("output_backwardinterpolation.txt", "w", stdout);
+    
     int n;
     cout << "Enter number of class intervals: ";
     cin >> n;

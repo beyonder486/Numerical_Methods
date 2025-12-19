@@ -1,0 +1,36 @@
+Enter number of data points: Enter data points (x y):
+
+Divided Difference Table:
+         x        f(x)            f[x1]            f[x2]            f[x3]            f[x4]
+-------------------------------------------------------------------------------------
+    1.0000         1.5000         2.7000         0.6000         0.0500        -0.0292
+    2.0000         4.2000         3.9000         0.7500        -0.0667
+    3.0000         8.1000         5.4000         0.5500
+    4.0000        13.5000         6.5000
+    5.0000        20.0000
+
+Enter value of x to interpolate: 
+Calculation steps:
+y(2.5000) = 1.5000 + (x-1.0000) * 2.7000 + (x-1.0000)(x-2.0000) * 0.6000 + (x-1.0000)(x-2.0000)(x-3.0000) * 0.0500 + (x-1.0000)(x-2.0000)(x-3.0000)(x-4.0000) * -0.0292
+
+========== RESULT ==========
+y(2.5000) = 5.964844
+
+========== TRUNCATION ERROR ESTIMATE ==========
+
+Term-by-term contributions:
+Term 0: 1.500000
+Term 1: 4.050000 (cumulative: 5.550000)
+Term 2: 0.450000 (cumulative: 6.000000)
+Term 3: -0.018750 (cumulative: 5.981250)
+Term 4: -0.016406 (cumulative: 5.964844)
+
+Estimated truncation error (next term magnitude):
+≈ |(x-x0)(x-x1)...(x-x4)| * |f[x0,...,x4]|
+≈ 0.041016
+
+Note: This is an approximation. Actual error depends on
+the (n+1)th divided difference which is unknown.
+
+Last term used: 0.027344
+As percentage of result: 0.458415%

@@ -8,16 +8,27 @@ double df(double x){
     return 4*x*x*x-6*x;
 }
 double calc(double x){
-    return x-f(x)/df(x);
+    double derivative = df(x);
+    if(fabs(derivative) < 1e-10){
+        return x; // Return current value if derivative is zero
+    }
+    return x-f(x)/derivative;
 }
 
 int main(){
-double a=-1,b=2,c,d=0.1;
+    freopen("input_newton-raphson.txt", "r", stdin);
+    freopen("output_newton-raphson.txt", "w", stdout);
+    
+    double a, b, step, tolerance;
+    int maxIterations;
+    cin >> a >> b >> step >> tolerance >> maxIterations;
+    
+    double c;
 vector<pair<double,double>>p;
-for(double i=a;i<b;i+=d){
-    if(f(i)*f(i+d)<0){
-        p.push_back({i,i+d});
-        i+=d*5;
+for(double i=a;i<b;i+=step){
+    if(f(i)*f(i+step)<0){
+        p.push_back({i,i+step});
+        i+=step*5;
     }
     //  if(f(a)*f(a-i)<0){
     //     p.push_back({a-i,a});
@@ -25,10 +36,10 @@ for(double i=a;i<b;i+=d){
 }
 int n=p.size(),i=0,j=0;
 if(n<4){
-for(double i=a;i>-500;i-=d){
-    if(f(i)*f(i-d)<0){
-        p.push_back({i-d,i});
-        i-=d*5;
+for(double i=a;i>-500;i-=step){
+    if(f(i)*f(i-step)<0){
+        p.push_back({i-step,i});
+        i-=step*5;
     }
     //  if(f(a)*f(a-i)<0){
     //     p.push_back({a-i,a});
@@ -36,18 +47,30 @@ for(double i=a;i>-500;i-=d){
 }
 }
 int m=p.size();
+if(m == 0){
+    cout << "No roots found in the given interval!" << endl;
+    return 0;
+}
+
+cout << "\n========== NEWTON-RAPHSON METHOD RESULTS ==========" << endl;
+cout << "Number of roots found: " << m << endl;
+cout << "\nRoots:" << endl;
+
+int rootNum = 1;
 while(m--){
     c=(p[i].first+p[i].second)*0.5;
-    while(fabs(f(c))>1e-6){
+    int iterCount = 0;
+    while(fabs(f(c))>tolerance && iterCount<maxIterations){
+        double prev_c = c;
         c=calc(c);
+        if(fabs(c - prev_c) < 1e-15) break; // Convergence stalled
+        iterCount++;
         j++;
     }
+    cout << "Root " << rootNum++ << ": " << fixed << setprecision(10) << c << " (iterations: " << iterCount << ")" << endl;
     i++;
-    cout<<c<<" ";
 }
-cout<<endl;
-for(auto& i:p)cout<<i.first<<" "<<i.second<<",";
-cout<<endl;
-cout<<j<<endl;
+cout << "\nTotal iterations across all roots: " << j << endl;
+
     return 0;
 }

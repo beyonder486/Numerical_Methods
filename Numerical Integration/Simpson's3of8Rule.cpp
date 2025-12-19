@@ -7,15 +7,18 @@ double f(double x){
 }
 
 int main(){
+    freopen("input_simpson3of8.txt", "r", stdin);
+    freopen("output_simpson3of8.txt", "w", stdout);
+    
     double a, b;
     int n;
     
-    cout << "Enter lower limit a: ";
-    cin >> a;
-    cout << "Enter upper limit b: ";
-    cin >> b;
-    cout << "Enter number of subintervals n (must be multiple of 3): ";
-    cin >> n;
+    cin >> a>>b>>n;
+    
+    if(n <= 0){
+        cout << "Error: n must be positive!" << endl;
+        return 1;
+    }
     
     if(n % 3 != 0){
         cout << "Error: n must be a multiple of 3!" << endl;
@@ -38,8 +41,13 @@ int main(){
     
     double result = (3 * h / 8.0) * sum;
     
+    cout << "\n========== SIMPSON'S 3/8 RULE RESULT ==========" << endl;
     cout << fixed << setprecision(6);
-    cout << "Integral = " << result << endl;
+    cout << "Lower limit (a): " << a << endl;
+    cout << "Upper limit (b): " << b << endl;
+    cout << "Number of subintervals (n): " << n << endl;
+    cout << "Step size (h): " << h << endl;
+    cout << "\nIntegral value: " << result << endl;
     
     return 0;
 }

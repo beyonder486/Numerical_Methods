@@ -2,6 +2,9 @@
 using namespace std;
 
 int main(){
+    freopen("input_lsr_Linear.txt", "r", stdin);
+    freopen("output_lsr_Linear.txt", "w", stdout);
+    
     int n;
     cout << "Enter number of data points: ";
     cin >> n;

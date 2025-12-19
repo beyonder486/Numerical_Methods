@@ -2,20 +2,22 @@
 using namespace std;
 
 double f(double x){
-    // Define your function here
-    return 1/(1+x*x);  // Example: sin(x)
+    return 1/(1+x*x);
 }
 
 int main(){
+    freopen("input_simpson1of3.txt", "r", stdin);
+    freopen("output_simpson1of3.txt", "w", stdout);
+    
     double a, b;
     int n;
     
-    cout << "Enter lower limit a: ";
-    cin >> a;
-    cout << "Enter upper limit b: ";
-    cin >> b;
-    cout << "Enter number of subintervals n (must be even): ";
-    cin >> n;
+    cin>>a>>b>>n;
+    
+    if(n <= 0){
+        cout << "Error: n must be positive!" << endl;
+        return 1;
+    }
     
     if(n % 2 != 0){
         cout << "Error: n must be even!" << endl;
@@ -38,8 +40,13 @@ int main(){
     
     double result = (h / 3.0) * sum;
     
+    cout << "\n========== SIMPSON'S 1/3 RULE RESULT ==========" << endl;
     cout << fixed << setprecision(6);
-    cout << "Integral = " << result << endl;
+    cout << "Lower limit (a): " << a << endl;
+    cout << "Upper limit (b): " << b << endl;
+    cout << "Number of subintervals (n): " << n << endl;
+    cout << "Step size (h): " << h << endl;
+    cout << "\nIntegral value: " << result << endl;
     
     return 0;
 }

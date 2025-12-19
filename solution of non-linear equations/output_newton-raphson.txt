@@ -1,0 +1,11 @@
+
+========== NEWTON-RAPHSON METHOD RESULTS ==========
+Number of roots found: 4
+
+Roots:
+Root 1: -0.6180339989 (iterations: 2)
+Root 2: 0.6180339989 (iterations: 2)
+Root 3: 1.6180339888 (iterations: 3)
+Root 4: -1.6180339888 (iterations: 3)
+
+Total iterations across all roots: 10

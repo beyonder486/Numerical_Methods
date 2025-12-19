@@ -1,0 +1,6 @@
+
+========== EXPONENTIAL LEAST SQUARES REGRESSION ==========
+Number of data points: 5
+
+Best fit exponential equation:
+y = 0.960609 * e^(0.985832x)

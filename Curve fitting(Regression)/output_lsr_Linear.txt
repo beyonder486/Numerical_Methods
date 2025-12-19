@@ -1,0 +1,39 @@
+Enter number of data points: Enter data points (x y):
+
+Data Points:
+         x         y
+--------------------
+         1       2.5
+         2       4.2
+         3       5.9
+         4       8.1
+         5       9.8
+
+========== CALCULATIONS ==========
+Σx   = 15
+Σy   = 30.5
+Σx²  = 55
+Σxy  = 110
+n    = 5
+
+========== LEAST SQUARES LINEAR REGRESSION ==========
+Best fit line: y = 1.8500x + 0.5500
+
+========== ERROR ANALYSIS ==========
+         x  y_actual    y_fitted    Residual  Residual²
+------------------------------------------------------------------
+    1.0000    2.5000      2.4000      0.1000      0.0100
+    2.0000    4.2000      4.2500     -0.0500      0.0025
+    3.0000    5.9000      6.1000     -0.2000      0.0400
+    4.0000    8.1000      7.9500      0.1500      0.0225
+    5.0000    9.8000      9.8000      0.0000      0.0000
+
+========== GOODNESS OF FIT ==========
+Sum of Squared Residuals (SSR): 0.0750
+Total Sum of Squares (SST):     34.3000
+R² (Coefficient of Determination): 0.9978
+Correlation Coefficient (r):       0.9989
+Interpretation: Excellent fit (R² > 0.9)
+Standard Error of Estimate: 0.1581
+
+Do you want to predict values? (y/n): 

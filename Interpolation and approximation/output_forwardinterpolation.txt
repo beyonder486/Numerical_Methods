@@ -1,0 +1,29 @@
+Enter number of class intervals: Enter class intervals and frequencies:
+(Format: lower upper frequency)
+
+Class Intervals and Midpoints:
+       Interval    Midpoint(x)   Frequency(y)
+---------------------------------------------
+     10-     20             15              5
+     20-     30             25              8
+     30-     40             35             12
+     40-     50             45              7
+
+Class width (h) = 10
+
+Forward Difference Table:
+         x           y         Δ^1y         Δ^2y         Δ^3y
+----------------------------------------------------------
+   15.0000      5.0000      3.0000      1.0000    -10.0000
+   25.0000      8.0000      4.0000     -9.0000
+   35.0000     12.0000     -5.0000
+   45.0000      7.0000
+
+Enter value of x to interpolate: 
+p = (x - x0) / h = (25.0000 - 15.0000) / 10.0000 = 1.0000
+
+Calculation steps:
+y(25.0000) = 5.0000
+
+========== RESULT ==========
+y(25.0000) = 8.000000

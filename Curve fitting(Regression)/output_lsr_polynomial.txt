@@ -1,0 +1,7 @@
+
+========== POLYNOMIAL LEAST SQUARES REGRESSION ==========
+Degree: 2
+Number of data points: 5
+
+Best fit polynomial equation:
+y = 0.98 + 0.75x + 0.75x^2
