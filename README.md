@@ -6,23 +6,70 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
 
 - [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
   - [Bisection Method](#bisection-method)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Newton-Raphson Method](#newton-raphson-method)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Regular Falsi (False Position) Method](#regular-falsi-false-position-method)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Secant Method](#secant-method)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
 
 - [Interpolation and Approximation](#interpolation-and-approximation)
   - [Newton's Forward Interpolation](#newtons-forward-interpolation)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Newton's Backward Interpolation](#newtons-backward-interpolation)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Newton's Divided Difference](#newtons-divided-difference)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
 
 - [Numerical Integration](#numerical-integration)
   - [Simpson's 1/3 Rule](#simpsons-13-rule)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Simpson's 3/8 Rule](#simpsons-38-rule)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
 
 - [Curve Fitting (Regression)](#curve-fitting-regression)
   - [Linear Least Squares Regression](#linear-least-squares-regression)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Polynomial Least Squares Regression](#polynomial-least-squares-regression)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
   - [Exponential Least Squares Regression](#exponential-least-squares-regression)
+  - [Theory](#theory)
+  - [Code](#code)
+  - [Input](#input)
+  - [Output](#output)
 
 ---
 
@@ -840,17 +887,3 @@ All programs include comprehensive error checking:
 - **Iteration limits** to prevent infinite loops
 
 ---
-
-## Contributing
-
-Feel free to contribute by:
-- Adding new numerical methods
-- Improving existing implementations
-- Fixing bugs
-- Enhancing documentation
-
----
-
-## License
-
-[Add your license information here]
