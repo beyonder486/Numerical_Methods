@@ -6,12 +6,10 @@ int main(){
     freopen("output_lsr_Linear.txt", "w", stdout);
     
     int n;
-    cout << "Enter number of data points: ";
     cin >> n;
     
     vector<double> x(n), y(n);
     
-    cout << "Enter data points (x y):" << endl;
     for(int i = 0; i < n; i++){
         cin >> x[i] >> y[i];
     }
@@ -71,24 +69,12 @@ int main(){
     double ss_tot = 0;  // Total sum of squares
     double ss_res = 0;  // Residual sum of squares
     
-    cout << "\n========== ERROR ANALYSIS ==========" << endl;
-    cout << setw(10) << "x" << setw(10) << "y_actual" << setw(12) << "y_fitted" 
-         << setw(12) << "Residual" << setw(12) << "Residual²" << endl;
-    cout << string(66, '-') << endl;
-    
     for(int i = 0; i < n; i++){
         double y_fitted = a * x[i] + b;
         double residual = y[i] - y_fitted;
-        double residual_sq = residual * residual;
         
-        ss_res += residual_sq;
+        ss_res += residual * residual;
         ss_tot += (y[i] - mean_y) * (y[i] - mean_y);
-        
-        cout << setw(10) << x[i] 
-             << setw(10) << y[i] 
-             << setw(12) << y_fitted 
-             << setw(12) << residual 
-             << setw(12) << residual_sq << endl;
     }
     
     double r_squared = 1 - (ss_res / ss_tot);
@@ -96,8 +82,6 @@ int main(){
     if(a < 0) correlation = -correlation;  // Negative correlation if slope is negative
     
     cout << "\n========== GOODNESS OF FIT ==========" << endl;
-    cout << "Sum of Squared Residuals (SSR): " << ss_res << endl;
-    cout << "Total Sum of Squares (SST):     " << ss_tot << endl;
     cout << "R² (Coefficient of Determination): " << r_squared << endl;
     cout << "Correlation Coefficient (r):       " << correlation << endl;
     
@@ -109,28 +93,6 @@ int main(){
         cout << "Interpretation: Moderate fit (R² > 0.5)" << endl;
     } else {
         cout << "Interpretation: Poor fit (R² < 0.5)" << endl;
-    }
-    
-    // Standard Error of Estimate
-    double standard_error = sqrt(ss_res / (n - 2));
-    cout << "Standard Error of Estimate: " << standard_error << endl;
-    
-    // Predict new values
-    char predict;
-    cout << "\nDo you want to predict values? (y/n): ";
-    cin >> predict;
-    
-    if(predict == 'y' || predict == 'Y'){
-        while(true){
-            double x_pred;
-            cout << "Enter x value to predict (or -999 to quit): ";
-            cin >> x_pred;
-            
-            if(x_pred == -999) break;
-            
-            double y_pred = a * x_pred + b;
-            cout << "Predicted y(" << x_pred << ") = " << y_pred << endl;
-        }
     }
     
     return 0;
