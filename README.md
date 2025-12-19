@@ -6,71 +6,71 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
 
 - [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
   - [Bisection Method](#bisection-method)
-    - [Theory](#theory)
-    - [Code](#code)
-    - [Input](#input)
-    - [Output](#output)
+    - [Theory](#theory-of-bisection-method)
+    - [Code](#code-of-bisection-method)
+    - [Input](#input-of-bisection-method)
+    - [Output](#output-of-bisection-method)
   - [Newton-Raphson Method](#newton-raphson-method)
-    - [Theory](#theory-1)
-    - [Code](#code-1)
-    - [Input](#input-1)
-    - [Output](#output-1)
+    - [Theory](#theory-of-newton-raphson-method)
+    - [Code](#code-of-newton-raphson-method)
+    - [Input](#input-of-newton-raphson-method)
+    - [Output](#output-of-newton-raphson-method)
   - [Regular Falsi (False Position) Method](#regular-falsi-false-position-method)
-    - [Theory](#theory-2)
-    - [Code](#code-2)
-    - [Input](#input-2)
-    - [Output](#output-2)
+    - [Theory](#theory-of-regular-falsi-method)
+    - [Code](#code-of-regular-falsi-method)
+    - [Input](#input-of-regular-falsi-method)
+    - [Output](#output-of-regular-falsi-method)
   - [Secant Method](#secant-method)
-    - [Theory](#theory-3)
-    - [Code](#code-3)
-    - [Input](#input-3)
-    - [Output](#output-3)
+    - [Theory](#theory-of-secant-method)
+    - [Code](#code-of-secant-method)
+    - [Input](#input-of-secant-method)
+    - [Output](#output-of-secant-method)
 
 - [Interpolation and Approximation](#interpolation-and-approximation)
   - [Newton's Forward Interpolation](#newtons-forward-interpolation)
-    - [Theory](#theory-4)
-    - [Code](#code-4)
-    - [Input](#input-4)
-    - [Output](#output-4)
+    - [Theory](#theory-of-newtons-forward-interpolation)
+    - [Code](#code-of-newtons-forward-interpolation)
+    - [Input](#input-of-newtons-forward-interpolation)
+    - [Output](#output-of-newtons-forward-interpolation)
   - [Newton's Backward Interpolation](#newtons-backward-interpolation)
-    - [Theory](#theory-5)
-    - [Code](#code-5)
-    - [Input](#input-5)
-    - [Output](#output-5)
+    - [Theory](#theory-of-newtons-backward-interpolation)
+    - [Code](#code-of-newtons-backward-interpolation)
+    - [Input](#input-of-newtons-backward-interpolation)
+    - [Output](#output-of-newtons-backward-interpolation)
   - [Newton's Divided Difference](#newtons-divided-difference)
-    - [Theory](#theory-6)
-    - [Code](#code-6)
-    - [Input](#input-6)
-    - [Output](#output-6)
+    - [Theory](#theory-of-newtons-divided-difference)
+    - [Code](#code-of-newtons-divided-difference)
+    - [Input](#input-of-newtons-divided-difference)
+    - [Output](#output-of-newtons-divided-difference)
 
 - [Numerical Integration](#numerical-integration)
   - [Simpson's 1/3 Rule](#simpsons-13-rule)
-    - [Theory](#theory-7)
-    - [Code](#code-7)
-    - [Input](#input-7)
-    - [Output](#output-7)
+    - [Theory](#theory-of-simpsons-13-rule)
+    - [Code](#code-of-simpsons-13-rule)
+    - [Input](#input-of-simpsons-13-rule)
+    - [Output](#output-of-simpsons-13-rule)
   - [Simpson's 3/8 Rule](#simpsons-38-rule)
-    - [Theory](#theory-8)
-    - [Code](#code-8)
-    - [Input](#input-8)
-    - [Output](#output-8)
+    - [Theory](#theory-of-simpsons-38-rule)
+    - [Code](#code-of-simpsons-38-rule)
+    - [Input](#input-of-simpsons-38-rule)
+    - [Output](#output-of-simpsons-38-rule)
 
 - [Curve Fitting (Regression)](#curve-fitting-regression)
   - [Linear Least Squares Regression](#linear-least-squares-regression)
-    - [Theory](#theory-9)
-    - [Code](#code-9)
-    - [Input](#input-9)
-    - [Output](#output-9)
+    - [Theory](#theory-of-linear-least-squares-regression)
+    - [Code](#code-of-linear-least-squares-regression)
+    - [Input](#input-of-linear-least-squares-regression)
+    - [Output](#output-of-linear-least-squares-regression)
   - [Polynomial Least Squares Regression](#polynomial-least-squares-regression)
-    - [Theory](#theory-10)
-    - [Code](#code-10)
-    - [Input](#input-10)
-    - [Output](#output-10)
+    - [Theory](#theory-of-polynomial-least-squares-regression)
+    - [Code](#code-of-polynomial-least-squares-regression)
+    - [Input](#input-of-polynomial-least-squares-regression)
+    - [Output](#output-of-polynomial-least-squares-regression)
   - [Exponential Least Squares Regression](#exponential-least-squares-regression)
-    - [Theory](#theory-11)
-    - [Code](#code-11)
-    - [Input](#input-11)
-    - [Output](#output-11)
+    - [Theory](#theory-of-exponential-least-squares-regression)
+    - [Code](#code-of-exponential-least-squares-regression)
+    - [Input](#input-of-exponential-least-squares-regression)
+    - [Output](#output-of-exponential-least-squares-regression)
 
 ---
 
@@ -78,7 +78,7 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
 
 ### Bisection Method
 
-#### 📚 **THEORY**
+#### Theory of Bisection Method
 The Bisection Method is a root-finding algorithm that repeatedly bisects an interval and selects a subinterval where a root exists. It's based on the Intermediate Value Theorem:
 - If f is continuous on [a,b] and f(a)·f(b) < 0, then there exists at least one root in (a,b)
 - The method divides the interval in half at each iteration
@@ -93,14 +93,13 @@ The Bisection Method is a root-finding algorithm that repeatedly bisects an inte
 
 ---
 
-#### 💻 **CODE**
-**File:** [`solution of non-linear equations/bisection-Method.cpp`](solution%20of%20non-linear%20equations/bisection-Method.cpp)
+#### Code of Bisection Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/bisection-Method.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Bisection Method
 **Format:**
 ```
 a b tolerance maxIterations
@@ -118,7 +117,7 @@ a b tolerance maxIterations
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Bisection Method
 **File:** `output_bisection.txt`
 ```
 ========== BISECTION METHOD RESULT ==========
@@ -131,7 +130,7 @@ f(0.2352941176) = 1.234567e-05
 
 ### Newton-Raphson Method
 
-#### 📚 **THEORY**
+#### Theory of Newton-Raphson Method
 Newton-Raphson is an iterative method that uses tangent lines to approximate roots. It has quadratic convergence near simple roots.
 
 **Formula:**
@@ -150,14 +149,13 @@ x_{n+1} = x_n - f(x_n)/f'(x_n)
 
 ---
 
-#### 💻 **CODE**
-**File:** [`solution of non-linear equations/newton-raphson-Method.cpp`](solution%20of%20non-linear%20equations/newton-raphson-Method.cpp)
+#### Code of Newton-Raphson Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/newton-raphson-Method.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Newton-Raphson Method
 **Format:**
 ```
 a b step tolerance maxIterations
@@ -176,7 +174,7 @@ a b step tolerance maxIterations
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Newton-Raphson Method
 **File:** `output_newton-raphson.txt`
 ```
 ========== NEWTON-RAPHSON METHOD RESULTS ==========
@@ -193,7 +191,7 @@ Total iterations across all roots: 18
 
 ### Regular Falsi (False Position) Method
 
-#### 📚 **THEORY**
+#### Theory of Regular Falsi Method
 The False Position Method is similar to the Bisection Method but uses linear interpolation instead of bisection to find the next approximation.
 
 **Formula:**
@@ -212,14 +210,13 @@ c = a - f(a)·(b-a)/(f(b)-f(a))
 
 ---
 
-#### 💻 **CODE**
-**File:** [`solution of non-linear equations/regularfalsi-FalsePosition-Method.cpp`](solution%20of%20non-linear%20equations/regularfalsi-FalsePosition-Method.cpp)
+#### Code of Regular Falsi Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/regularfalsi-FalsePosition-Method.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Regular Falsi Method
 **Format:**
 ```
 a b tolerance maxIterations
@@ -237,7 +234,7 @@ a b tolerance maxIterations
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Regular Falsi Method
 **File:** `output_regularfalsi.txt`
 ```
 ========== REGULAR FALSI (FALSE POSITION) METHOD RESULT ==========
@@ -251,7 +248,7 @@ Tolerance: 0.0000001
 
 ### Secant Method
 
-#### 📚 **THEORY**
+#### Theory of Secant Method
 The Secant Method is similar to Newton-Raphson but approximates the derivative using finite differences, eliminating the need to compute f'(x).
 
 **Formula:**
@@ -270,14 +267,13 @@ x_{n+1} = x_n - f(x_n)·(x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 
 ---
 
-#### 💻 **CODE**
-**File:** [`solution of non-linear equations/secant-Method.cpp`](solution%20of%20non-linear%20equations/secant-Method.cpp)
+#### Code of Secant Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/secant-Method.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Secant Method
 **Format:**
 ```
 a b step tolerance maxIterations
@@ -296,7 +292,7 @@ a b step tolerance maxIterations
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Secant Method
 **File:** `output_secant.txt`
 ```
 ========== SECANT METHOD RESULTS ==========
@@ -315,7 +311,7 @@ Total iterations across all roots: 23
 
 ### Newton's Forward Interpolation
 
-#### 📚 **THEORY**
+#### Theory of Newton's Forward Interpolation
 Newton's Forward Interpolation uses forward differences to construct an interpolating polynomial. Best suited when interpolating near the beginning of tabulated data.
 
 **Formula:**
@@ -331,14 +327,13 @@ where p = (x - x₀)/h
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Interpolation and approximation/forwardinterpolation.cpp`](Interpolation%20and%20approximation/forwardinterpolation.cpp)
+#### Code of Newton's Forward Interpolation
 
 **[📂 View Source Code](Interpolation%20and%20approximation/forwardinterpolation.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Newton's Forward Interpolation
 **Format:**
 ```
 n
@@ -365,7 +360,7 @@ xp
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Newton's Forward Interpolation
 **File:** `output_forwardinterpolation.txt`
 ```
 Class Intervals and Midpoints:
@@ -389,7 +384,7 @@ y(25) = 8.500000
 
 ### Newton's Backward Interpolation
 
-#### 📚 **THEORY**
+#### Theory of Newton's Backward Interpolation
 Newton's Backward Interpolation uses backward differences to construct an interpolating polynomial. Best suited when interpolating near the end of tabulated data.
 
 **Formula:**
@@ -405,14 +400,13 @@ where q = (x - xₙ)/h
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Interpolation and approximation/backwardinterpolation.cpp`](Interpolation%20and%20approximation/backwardinterpolation.cpp)
+#### Code of Newton's Backward Interpolation
 
 **[📂 View Source Code](Interpolation%20and%20approximation/backwardinterpolation.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Newton's Backward Interpolation
 **Format:**
 ```
 n
@@ -435,7 +429,7 @@ xp
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Newton's Backward Interpolation
 **File:** `output_backwardinterpolation.txt`
 ```
 Class Intervals and Midpoints:
@@ -457,7 +451,7 @@ y(45) = 7.000000
 
 ### Newton's Divided Difference
 
-#### 📚 **THEORY**
+#### Theory of Newton's Divided Difference
 Newton's Divided Difference method works for both equally and unequally spaced data. It constructs an interpolating polynomial using divided differences.
 
 **Formula:**
@@ -472,14 +466,13 @@ y(x) = f[x₀] + (x-x₀)f[x₀,x₁] + (x-x₀)(x-x₁)f[x₀,x₁,x₂] + ...
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Interpolation and approximation/divideddifference.cpp`](Interpolation%20and%20approximation/divideddifference.cpp)
+#### Code of Newton's Divided Difference
 
 **[📂 View Source Code](Interpolation%20and%20approximation/divideddifference.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Newton's Divided Difference
 **Format:**
 ```
 n
@@ -507,7 +500,7 @@ xp
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Newton's Divided Difference
 **File:** `output_divideddifference.txt`
 ```
 Data Points:
@@ -542,7 +535,7 @@ Estimated truncation error: ≈ 0.125000
 
 ### Simpson's 1/3 Rule
 
-#### 📚 **THEORY**
+#### Theory of Simpson's 1/3 Rule
 Simpson's 1/3 Rule approximates definite integrals by fitting parabolas through consecutive triplets of points. It provides better accuracy than the Trapezoidal Rule.
 
 **Formula:**
@@ -559,14 +552,13 @@ where i = odd indices, j = even indices (excluding endpoints)
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Numerical Integration/simpson's1of3Rule.cpp`](Numerical%20Integration/simpson's1of3Rule.cpp)
+#### Code of Simpson's 1/3 Rule
 
 **[📂 View Source Code](Numerical%20Integration/simpson's1of3Rule.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Simpson's 1/3 Rule
 **Format:**
 ```
 a b n
@@ -583,7 +575,7 @@ a b n
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Simpson's 1/3 Rule
 **File:** `output_simpson1of3.txt`
 ```
 ========== SIMPSON'S 1/3 RULE RESULT ==========
@@ -599,7 +591,7 @@ Integral value: 2.000109
 
 ### Simpson's 3/8 Rule
 
-#### 📚 **THEORY**
+#### Theory of Simpson's 3/8 Rule
 Simpson's 3/8 Rule uses cubic interpolation and is similar to Simpson's 1/3 Rule but requires the number of subintervals to be a multiple of 3.
 
 **Formula:**
@@ -616,14 +608,13 @@ where i = non-multiples of 3, j = multiples of 3 (excluding endpoints)
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Numerical Integration/Simpson's3of8Rule.cpp`](Numerical%20Integration/Simpson's3of8Rule.cpp)
+#### Code of Simpson's 3/8 Rule
 
 **[📂 View Source Code](Numerical%20Integration/Simpson's3of8Rule.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Simpson's 3/8 Rule
 **Format:**
 ```
 a b n
@@ -640,7 +631,7 @@ a b n
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Simpson's 3/8 Rule
 **File:** `output_simpson3of8.txt`
 ```
 ========== SIMPSON'S 3/8 RULE RESULT ==========
@@ -658,7 +649,7 @@ Integral value: 2.000459
 
 ### Linear Least Squares Regression
 
-#### 📚 **THEORY**
+#### Theory of Linear Least Squares Regression
 Linear Least Squares finds the best-fit straight line y = ax + b that minimizes the sum of squared residuals.
 
 **Normal Equations:**
@@ -673,14 +664,13 @@ b = (Σy - aΣx)/n
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Curve fitting(Regression)/lsr-Linear.cpp`](Curve%20fitting(Regression)/lsr-Linear.cpp)
+#### Code of Linear Least Squares Regression
 
 **[📂 View Source Code](Curve%20fitting(Regression)/lsr-Linear.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Linear Least Squares Regression
 **Format:**
 ```
 n
@@ -705,7 +695,7 @@ xₙ yₙ
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Linear Least Squares Regression
 **File:** `output_lsr_Linear.txt`
 ```
 Data Points:
@@ -737,7 +727,7 @@ Interpretation: Excellent fit (R² > 0.9)
 
 ### Polynomial Least Squares Regression
 
-#### 📚 **THEORY**
+#### Theory of Polynomial Least Squares Regression
 Polynomial Least Squares fits a polynomial of degree m: y = a₀ + a₁x + a₂x² + ... + aₘxᵐ
 
 The method solves the system of normal equations using Gauss-Jordan elimination to find coefficients that minimize the sum of squared residuals.
@@ -752,14 +742,13 @@ The method solves the system of normal equations using Gauss-Jordan elimination 
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Curve fitting(Regression)/lsr_polynomial.cpp`](Curve%20fitting(Regression)/lsr_polynomial.cpp)
+#### Code of Polynomial Least Squares Regression
 
 **[📂 View Source Code](Curve%20fitting(Regression)/lsr_polynomial.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Polynomial Least Squares Regression
 **Format:**
 ```
 n degree
@@ -785,7 +774,7 @@ xₙ yₙ
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Polynomial Least Squares Regression
 **File:** `output_lsr_polynomial.txt`
 ```
 ========== POLYNOMIAL LEAST SQUARES REGRESSION ==========
@@ -800,7 +789,7 @@ y = 0.371429 + 0.571429x + 0.928571x^2
 
 ### Exponential Least Squares Regression
 
-#### 📚 **THEORY**
+#### Theory of Exponential Least Squares Regression
 Exponential Least Squares fits data to the model: y = a·eᵇˣ
 
 By taking logarithms: ln(y) = ln(a) + bx, which is linear in ln(y).
@@ -816,14 +805,13 @@ By taking logarithms: ln(y) = ln(a) + bx, which is linear in ln(y).
 
 ---
 
-#### 💻 **CODE**
-**File:** [`Curve fitting(Regression)/lsr_transcedental.cpp`](Curve%20fitting(Regression)/lsr_transcedental.cpp)
+#### Code of Exponential Least Squares Regression
 
 **[📂 View Source Code](Curve%20fitting(Regression)/lsr_transcedental.cpp)**
 
 ---
 
-#### 📥 **INPUT**
+#### Input of Exponential Least Squares Regression
 **Format:**
 ```
 n
@@ -848,7 +836,7 @@ xₙ yₙ
 
 ---
 
-#### 📤 **OUTPUT**
+#### Output of Exponential Least Squares Regression
 **File:** `output_lsr_transcedental.txt`
 ```
 ========== EXPONENTIAL LEAST SQUARES REGRESSION ==========
