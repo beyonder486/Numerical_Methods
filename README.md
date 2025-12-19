@@ -6,70 +6,71 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
 
 - [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
   - [Bisection Method](#bisection-method)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory)
+    - [Code](#code)
+    - [Input](#input)
+    - [Output](#output)
   - [Newton-Raphson Method](#newton-raphson-method)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-1)
+    - [Code](#code-1)
+    - [Input](#input-1)
+    - [Output](#output-1)
   - [Regular Falsi (False Position) Method](#regular-falsi-false-position-method)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-2)
+    - [Code](#code-2)
+    - [Input](#input-2)
+    - [Output](#output-2)
   - [Secant Method](#secant-method)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-3)
+    - [Code](#code-3)
+    - [Input](#input-3)
+    - [Output](#output-3)
 
 - [Interpolation and Approximation](#interpolation-and-approximation)
   - [Newton's Forward Interpolation](#newtons-forward-interpolation)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-4)
+    - [Code](#code-4)
+    - [Input](#input-4)
+    - [Output](#output-4)
   - [Newton's Backward Interpolation](#newtons-backward-interpolation)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-5)
+    - [Code](#code-5)
+    - [Input](#input-5)
+    - [Output](#output-5)
   - [Newton's Divided Difference](#newtons-divided-difference)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
+    - [Theory](#theory-6)
+    - [Code](#code-6)
+    - [Input](#input-6)
+    - [Output](#output-6)
 
 - [Numerical Integration](#numerical-integration)
   - [Simpson's 1/3 Rule](#simpsons-13-rule)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-7)
+    - [Code](#code-7)
+    - [Input](#input-7)
+    - [Output](#output-7)
   - [Simpson's 3/8 Rule](#simpsons-38-rule)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-8)
+    - [Code](#code-8)
+    - [Input](#input-8)
+    - [Output](#output-8)
 
 - [Curve Fitting (Regression)](#curve-fitting-regression)
   - [Linear Least Squares Regression](#linear-least-squares-regression)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-9)
+    - [Code](#code-9)
+    - [Input](#input-9)
+    - [Output](#output-9)
   - [Polynomial Least Squares Regression](#polynomial-least-squares-regression)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-10)
+    - [Code](#code-10)
+    - [Input](#input-10)
+    - [Output](#output-10)
   - [Exponential Least Squares Regression](#exponential-least-squares-regression)
-  - [Theory](#theory)
-  - [Code](#code)
-  - [Input](#input)
-  - [Output](#output)
+    - [Theory](#theory-11)
+    - [Code](#code-11)
+    - [Input](#input-11)
+    - [Output](#output-11)
 
 ---
 
@@ -93,7 +94,9 @@ The Bisection Method is a root-finding algorithm that repeatedly bisects an inte
 ---
 
 #### 💻 **CODE**
-**File:** `solution of non-linear equations/bisection-Method.cpp`
+**File:** [`solution of non-linear equations/bisection-Method.cpp`](solution%20of%20non-linear%20equations/bisection-Method.cpp)
+
+**[📂 View Source Code](solution%20of%20non-linear%20equations/bisection-Method.cpp)**
 
 ---
 
@@ -148,7 +151,9 @@ x_{n+1} = x_n - f(x_n)/f'(x_n)
 ---
 
 #### 💻 **CODE**
-**File:** `solution of non-linear equations/newton-raphson-Method.cpp`
+**File:** [`solution of non-linear equations/newton-raphson-Method.cpp`](solution%20of%20non-linear%20equations/newton-raphson-Method.cpp)
+
+**[📂 View Source Code](solution%20of%20non-linear%20equations/newton-raphson-Method.cpp)**
 
 ---
 
@@ -208,7 +213,9 @@ c = a - f(a)·(b-a)/(f(b)-f(a))
 ---
 
 #### 💻 **CODE**
-**File:** `solution of non-linear equations/regularfalsi-FalsePosition-Method.cpp`
+**File:** [`solution of non-linear equations/regularfalsi-FalsePosition-Method.cpp`](solution%20of%20non-linear%20equations/regularfalsi-FalsePosition-Method.cpp)
+
+**[📂 View Source Code](solution%20of%20non-linear%20equations/regularfalsi-FalsePosition-Method.cpp)**
 
 ---
 
@@ -264,7 +271,9 @@ x_{n+1} = x_n - f(x_n)·(x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 ---
 
 #### 💻 **CODE**
-**File:** `solution of non-linear equations/secant-Method.cpp`
+**File:** [`solution of non-linear equations/secant-Method.cpp`](solution%20of%20non-linear%20equations/secant-Method.cpp)
+
+**[📂 View Source Code](solution%20of%20non-linear%20equations/secant-Method.cpp)**
 
 ---
 
@@ -323,7 +332,9 @@ where p = (x - x₀)/h
 ---
 
 #### 💻 **CODE**
-**File:** `Interpolation and approximation/forwardinterpolation.cpp`
+**File:** [`Interpolation and approximation/forwardinterpolation.cpp`](Interpolation%20and%20approximation/forwardinterpolation.cpp)
+
+**[📂 View Source Code](Interpolation%20and%20approximation/forwardinterpolation.cpp)**
 
 ---
 
@@ -363,7 +374,7 @@ Class Intervals and Midpoints:
      10-     20             15              5
      20-     30             25              8
      30-     40             35             12
-     40-     50             45              7
+     40-    50             45              7
 
 Class width (h) = 10
 
@@ -395,7 +406,9 @@ where q = (x - xₙ)/h
 ---
 
 #### 💻 **CODE**
-**File:** `Interpolation and approximation/backwardinterpolation.cpp`
+**File:** [`Interpolation and approximation/backwardinterpolation.cpp`](Interpolation%20and%20approximation/backwardinterpolation.cpp)
+
+**[📂 View Source Code](Interpolation%20and%20approximation/backwardinterpolation.cpp)**
 
 ---
 
@@ -431,7 +444,7 @@ Class Intervals and Midpoints:
      10-     20             15              5
      20-     30             25              8
      30-     40             35             12
-     40-     50             45              7
+     40-    50             45              7
 
 Backward Difference Table:
 ...
@@ -460,7 +473,9 @@ y(x) = f[x₀] + (x-x₀)f[x₀,x₁] + (x-x₀)(x-x₁)f[x₀,x₁,x₂] + ...
 ---
 
 #### 💻 **CODE**
-**File:** `Interpolation and approximation/divideddifference.cpp`
+**File:** [`Interpolation and approximation/divideddifference.cpp`](Interpolation%20and%20approximation/divideddifference.cpp)
+
+**[📂 View Source Code](Interpolation%20and%20approximation/divideddifference.cpp)**
 
 ---
 
@@ -545,7 +560,9 @@ where i = odd indices, j = even indices (excluding endpoints)
 ---
 
 #### 💻 **CODE**
-**File:** `Numerical Integration/simpson's1of3Rule.cpp`
+**File:** [`Numerical Integration/simpson's1of3Rule.cpp`](Numerical%20Integration/simpson's1of3Rule.cpp)
+
+**[📂 View Source Code](Numerical%20Integration/simpson's1of3Rule.cpp)**
 
 ---
 
@@ -600,7 +617,9 @@ where i = non-multiples of 3, j = multiples of 3 (excluding endpoints)
 ---
 
 #### 💻 **CODE**
-**File:** `Numerical Integration/Simpson's3of8Rule.cpp`
+**File:** [`Numerical Integration/Simpson's3of8Rule.cpp`](Numerical%20Integration/Simpson's3of8Rule.cpp)
+
+**[📂 View Source Code](Numerical%20Integration/Simpson's3of8Rule.cpp)**
 
 ---
 
@@ -655,7 +674,9 @@ b = (Σy - aΣx)/n
 ---
 
 #### 💻 **CODE**
-**File:** `Curve fitting(Regression)/lsr-Linear.cpp`
+**File:** [`Curve fitting(Regression)/lsr-Linear.cpp`](Curve%20fitting(Regression)/lsr-Linear.cpp)
+
+**[📂 View Source Code](Curve%20fitting(Regression)/lsr-Linear.cpp)**
 
 ---
 
@@ -732,7 +753,9 @@ The method solves the system of normal equations using Gauss-Jordan elimination 
 ---
 
 #### 💻 **CODE**
-**File:** `Curve fitting(Regression)/lsr_polynomial.cpp`
+**File:** [`Curve fitting(Regression)/lsr_polynomial.cpp`](Curve%20fitting(Regression)/lsr_polynomial.cpp)
+
+**[📂 View Source Code](Curve%20fitting(Regression)/lsr_polynomial.cpp)**
 
 ---
 
@@ -794,7 +817,9 @@ By taking logarithms: ln(y) = ln(a) + bx, which is linear in ln(y).
 ---
 
 #### 💻 **CODE**
-**File:** `Curve fitting(Regression)/lsr_transcedental.cpp`
+**File:** [`Curve fitting(Regression)/lsr_transcedental.cpp`](Curve%20fitting(Regression)/lsr_transcedental.cpp)
+
+**[📂 View Source Code](Curve%20fitting(Regression)/lsr_transcedental.cpp)**
 
 ---
 
