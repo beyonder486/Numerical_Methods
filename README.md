@@ -30,7 +30,7 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
 
 ### Bisection Method
 
-#### Theory
+#### 📚 **THEORY**
 The Bisection Method is a root-finding algorithm that repeatedly bisects an interval and selects a subinterval where a root exists. It's based on the Intermediate Value Theorem:
 - If f is continuous on [a,b] and f(a)·f(b) < 0, then there exists at least one root in (a,b)
 - The method divides the interval in half at each iteration
@@ -43,24 +43,33 @@ The Bisection Method is a root-finding algorithm that repeatedly bisects an inte
 4. If f(a)·f(c) < 0, set b = c; else set a = c
 5. Repeat until convergence
 
-#### Code Location
-`solution of non-linear equations/bisection-Method.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `solution of non-linear equations/bisection-Method.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 a b tolerance maxIterations
 ```
+**Parameters:**
 - `a`: Lower bound of interval
 - `b`: Upper bound of interval  
 - `tolerance`: Convergence tolerance (e.g., 0.0001)
 - `maxIterations`: Maximum number of iterations (e.g., 100)
 
-**Example:**
+**Example Input:** (`input_bisection.txt`)
 ```
 0 5 0.0001 100
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_bisection.txt`
 ```
 ========== BISECTION METHOD RESULT ==========
 Root: 0.2352941176
@@ -72,7 +81,7 @@ f(0.2352941176) = 1.234567e-05
 
 ### Newton-Raphson Method
 
-#### Theory
+#### 📚 **THEORY**
 Newton-Raphson is an iterative method that uses tangent lines to approximate roots. It has quadratic convergence near simple roots.
 
 **Formula:**
@@ -89,25 +98,34 @@ x_{n+1} = x_n - f(x_n)/f'(x_n)
 - May fail if f'(x) ≈ 0
 - May not converge if initial guess is far from root
 
-#### Code Location
-`solution of non-linear equations/newton-raphson-Method.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `solution of non-linear equations/newton-raphson-Method.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 a b step tolerance maxIterations
 ```
+**Parameters:**
 - `a`: Start of search interval
 - `b`: End of search interval
 - `step`: Step size for finding initial brackets (e.g., 0.1)
 - `tolerance`: Convergence tolerance (e.g., 1e-6)
 - `maxIterations`: Maximum iterations per root (e.g., 1000)
 
-**Example:**
+**Example Input:** (`input_newton-raphson.txt`)
 ```
 -1 2 0.1 1e-6 1000
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_newton-raphson.txt`
 ```
 ========== NEWTON-RAPHSON METHOD RESULTS ==========
 Number of roots found: 3
@@ -123,7 +141,7 @@ Total iterations across all roots: 18
 
 ### Regular Falsi (False Position) Method
 
-#### Theory
+#### 📚 **THEORY**
 The False Position Method is similar to the Bisection Method but uses linear interpolation instead of bisection to find the next approximation.
 
 **Formula:**
@@ -140,24 +158,33 @@ c = a - f(a)·(b-a)/(f(b)-f(a))
 - Can be slower than Newton-Raphson
 - May converge from one side only
 
-#### Code Location
-`solution of non-linear equations/regularfalsi(FalsePosition)-Method.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `solution of non-linear equations/regularfalsi-FalsePosition-Method.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 a b tolerance maxIterations
 ```
+**Parameters:**
 - `a`: Lower bound of interval
 - `b`: Upper bound of interval
 - `tolerance`: Convergence tolerance (e.g., 1e-7)
 - `maxIterations`: Maximum iterations (e.g., 100)
 
-**Example:**
+**Example Input:** (`input_regularfalsi.txt`)
 ```
 0 1 1e-7 100
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_regularfalsi.txt`
 ```
 ========== REGULAR FALSI (FALSE POSITION) METHOD RESULT ==========
 Root: 0.2352941176
@@ -170,7 +197,7 @@ Tolerance: 0.0000001
 
 ### Secant Method
 
-#### Theory
+#### 📚 **THEORY**
 The Secant Method is similar to Newton-Raphson but approximates the derivative using finite differences, eliminating the need to compute f'(x).
 
 **Formula:**
@@ -187,25 +214,34 @@ x_{n+1} = x_n - f(x_n)·(x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 - Requires two initial guesses
 - May fail if f(x_n) ≈ f(x_{n-1})
 
-#### Code Location
-`solution of non-linear equations/secant-Method.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `solution of non-linear equations/secant-Method.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 a b step tolerance maxIterations
 ```
+**Parameters:**
 - `a`: Start of search interval
 - `b`: End of search interval
 - `step`: Step size for finding brackets (e.g., 0.1)
 - `tolerance`: Convergence tolerance (e.g., 1e-6)
 - `maxIterations`: Maximum iterations (e.g., 1000)
 
-**Example:**
+**Example Input:** (`input_secant.txt`)
 ```
 -3 3 0.1 1e-6 1000
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_secant.txt`
 ```
 ========== SECANT METHOD RESULTS ==========
 Number of roots found: 3
@@ -223,7 +259,7 @@ Total iterations across all roots: 23
 
 ### Newton's Forward Interpolation
 
-#### Theory
+#### 📚 **THEORY**
 Newton's Forward Interpolation uses forward differences to construct an interpolating polynomial. Best suited when interpolating near the beginning of tabulated data.
 
 **Formula:**
@@ -237,10 +273,15 @@ where p = (x - x₀)/h
 - Interpolation near the beginning of data
 - Class interval data (grouped frequency distributions)
 
-#### Code Location
-`Interpolation and approximation/forwardinterpolation.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Interpolation and approximation/forwardinterpolation.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 n
 lower₁ upper₁ frequency₁
@@ -249,11 +290,12 @@ lower₂ upper₂ frequency₂
 lowerₙ upperₙ frequencyₙ
 xp
 ```
+**Parameters:**
 - `n`: Number of class intervals
 - `lower upper frequency`: Class interval bounds and frequency
 - `xp`: Point at which to interpolate
 
-**Example:**
+**Example Input:** (`input_forwardinterpolation.txt`)
 ```
 4
 10 20 5
@@ -263,7 +305,10 @@ xp
 25
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_forwardinterpolation.txt`
 ```
 Class Intervals and Midpoints:
        Interval    Midpoint(x)  Frequency(y)
@@ -286,7 +331,7 @@ y(25) = 8.500000
 
 ### Newton's Backward Interpolation
 
-#### Theory
+#### 📚 **THEORY**
 Newton's Backward Interpolation uses backward differences to construct an interpolating polynomial. Best suited when interpolating near the end of tabulated data.
 
 **Formula:**
@@ -300,10 +345,15 @@ where q = (x - xₙ)/h
 - Interpolation near the end of data
 - Class interval data with interpolation near upper bounds
 
-#### Code Location
-`Interpolation and approximation/backwardinterpolation.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Interpolation and approximation/backwardinterpolation.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 n
 lower₁ upper₁ frequency₁
@@ -313,7 +363,7 @@ lowerₙ upperₙ frequencyₙ
 xp
 ```
 
-**Example:**
+**Example Input:** (`input_backwardinterpolation.txt`)
 ```
 4
 10 20 5
@@ -323,7 +373,10 @@ xp
 45
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_backwardinterpolation.txt`
 ```
 Class Intervals and Midpoints:
        Interval    Midpoint(x)  Frequency(y)
@@ -344,7 +397,7 @@ y(45) = 7.000000
 
 ### Newton's Divided Difference
 
-#### Theory
+#### 📚 **THEORY**
 Newton's Divided Difference method works for both equally and unequally spaced data. It constructs an interpolating polynomial using divided differences.
 
 **Formula:**
@@ -357,10 +410,15 @@ y(x) = f[x₀] + (x-x₀)f[x₀,x₁] + (x-x₀)(x-x₁)f[x₀,x₁,x₂] + ...
 - Easy to add new data points
 - Provides error estimation
 
-#### Code Location
-`Interpolation and approximation/divideddifference.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Interpolation and approximation/divideddifference.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 n
 x₁ y₁
@@ -369,11 +427,12 @@ x₂ y₂
 xₙ yₙ
 xp
 ```
+**Parameters:**
 - `n`: Number of data points
 - `x y`: Data point coordinates
 - `xp`: Point at which to interpolate
 
-**Example:**
+**Example Input:** (`input_divideddifference.txt`)
 ```
 5
 1.0 1.5
@@ -384,7 +443,10 @@ xp
 2.5
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_divideddifference.txt`
 ```
 Data Points:
          x         f(x)
@@ -418,7 +480,7 @@ Estimated truncation error: ≈ 0.125000
 
 ### Simpson's 1/3 Rule
 
-#### Theory
+#### 📚 **THEORY**
 Simpson's 1/3 Rule approximates definite integrals by fitting parabolas through consecutive triplets of points. It provides better accuracy than the Trapezoidal Rule.
 
 **Formula:**
@@ -433,23 +495,32 @@ where i = odd indices, j = even indices (excluding endpoints)
 
 **Error:** O(h⁴)
 
-#### Code Location
-`Numerical Integration/simpson1of3.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Numerical Integration/simpson's1of3Rule.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 a b n
 ```
+**Parameters:**
 - `a`: Lower limit of integration
 - `b`: Upper limit of integration
 - `n`: Number of subintervals (must be even)
 
-**Example:**
+**Example Input:** (`input_simpson1of3.txt`)
 ```
 0 3.14159 6
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_simpson1of3.txt`
 ```
 ========== SIMPSON'S 1/3 RULE RESULT ==========
 Lower limit (a): 0.000000
@@ -464,7 +535,7 @@ Integral value: 2.000109
 
 ### Simpson's 3/8 Rule
 
-#### Theory
+#### 📚 **THEORY**
 Simpson's 3/8 Rule uses cubic interpolation and is similar to Simpson's 1/3 Rule but requires the number of subintervals to be a multiple of 3.
 
 **Formula:**
@@ -479,23 +550,32 @@ where i = non-multiples of 3, j = multiples of 3 (excluding endpoints)
 
 **Error:** O(h⁴)
 
-#### Code Location
-`Numerical Integration/simpson's3of8.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Numerical Integration/Simpson's3of8Rule.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 a b n
 ```
+**Parameters:**
 - `a`: Lower limit of integration
 - `b`: Upper limit of integration
 - `n`: Number of subintervals (must be multiple of 3)
 
-**Example:**
+**Example Input:** (`input_simpson3of8.txt`)
 ```
 0 3.14159 6
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_simpson3of8.txt`
 ```
 ========== SIMPSON'S 3/8 RULE RESULT ==========
 Lower limit (a): 0.000000
@@ -512,7 +592,7 @@ Integral value: 2.000459
 
 ### Linear Least Squares Regression
 
-#### Theory
+#### 📚 **THEORY**
 Linear Least Squares finds the best-fit straight line y = ax + b that minimizes the sum of squared residuals.
 
 **Normal Equations:**
@@ -525,10 +605,15 @@ b = (Σy - aΣx)/n
 - R² (Coefficient of Determination): Measures how well the line fits the data (0 to 1)
 - Correlation Coefficient (r): Measures linear relationship strength (-1 to 1)
 
-#### Code Location
-`Curve fitting(Regression)/lsr-Linear.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Curve fitting(Regression)/lsr-Linear.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 n
 x₁ y₁
@@ -536,10 +621,11 @@ x₂ y₂
 ...
 xₙ yₙ
 ```
+**Parameters:**
 - `n`: Number of data points
 - `x y`: Data point coordinates
 
-**Example:**
+**Example Input:** (`input_lsr_Linear.txt`)
 ```
 5
 1.0 2.5
@@ -549,7 +635,10 @@ xₙ yₙ
 5.0 9.8
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_lsr_Linear.txt`
 ```
 Data Points:
          x         y
@@ -580,7 +669,7 @@ Interpretation: Excellent fit (R² > 0.9)
 
 ### Polynomial Least Squares Regression
 
-#### Theory
+#### 📚 **THEORY**
 Polynomial Least Squares fits a polynomial of degree m: y = a₀ + a₁x + a₂x² + ... + aₘxᵐ
 
 The method solves the system of normal equations using Gauss-Jordan elimination to find coefficients that minimize the sum of squared residuals.
@@ -593,10 +682,15 @@ The method solves the system of normal equations using Gauss-Jordan elimination 
 [Σxᵐ  Σxᵐ⁺¹ ... Σx²ᵐ] [aₘ]   [Σy·xᵐ]
 ```
 
-#### Code Location
-`Curve fitting(Regression)/lsr_polynomial.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Curve fitting(Regression)/lsr_polynomial.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 n degree
 x₁ y₁
@@ -604,11 +698,12 @@ x₂ y₂
 ...
 xₙ yₙ
 ```
+**Parameters:**
 - `n`: Number of data points
 - `degree`: Degree of polynomial (e.g., 2 for quadratic)
 - `x y`: Data point coordinates
 
-**Example:**
+**Example Input:** (`input_lsr_polynomial.txt`)
 ```
 5 2
 1.0 2.5
@@ -618,7 +713,10 @@ xₙ yₙ
 5.0 23.5
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_lsr_polynomial.txt`
 ```
 ========== POLYNOMIAL LEAST SQUARES REGRESSION ==========
 Degree: 2
@@ -632,7 +730,7 @@ y = 0.371429 + 0.571429x + 0.928571x^2
 
 ### Exponential Least Squares Regression
 
-#### Theory
+#### 📚 **THEORY**
 Exponential Least Squares fits data to the model: y = a·eᵇˣ
 
 By taking logarithms: ln(y) = ln(a) + bx, which is linear in ln(y).
@@ -646,10 +744,15 @@ By taking logarithms: ln(y) = ln(a) + bx, which is linear in ln(y).
 **Requirements:**
 - All y values must be positive (cannot take log of negative numbers)
 
-#### Code Location
-`Curve fitting(Regression)/lsr_transcedental.cpp`
+---
 
-#### Input Format
+#### 💻 **CODE**
+**File:** `Curve fitting(Regression)/lsr_transcedental.cpp`
+
+---
+
+#### 📥 **INPUT**
+**Format:**
 ```
 n
 x₁ y₁
@@ -657,10 +760,11 @@ x₂ y₂
 ...
 xₙ yₙ
 ```
+**Parameters:**
 - `n`: Number of data points (must be ≥ 2)
 - `x y`: Data points (all y values must be positive)
 
-**Example:**
+**Example Input:** (`input_lsr_transcedental.txt`)
 ```
 5
 1.0 2.5
@@ -670,7 +774,10 @@ xₙ yₙ
 5.0 132.5
 ```
 
-#### Output
+---
+
+#### 📤 **OUTPUT**
+**File:** `output_lsr_transcedental.txt`
 ```
 ========== EXPONENTIAL LEAST SQUARES REGRESSION ==========
 Number of data points: 5
