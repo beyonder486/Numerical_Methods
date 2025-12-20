@@ -26,8 +26,8 @@ double dividedDifference(vector<double>& x, vector<double>& y, int n, double xp,
 }
 
 int main(){
-    freopen("input_divideddifference.txt", "r", stdin);
-    freopen("output_divideddifference.txt", "w", stdout);
+    freopen("input/input_divideddifference.txt", "r", stdin);
+    freopen("output/output_divideddifference.txt", "w", stdout);
     
     int n;
     cout << "Enter number of data points: ";

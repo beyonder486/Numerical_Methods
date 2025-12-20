@@ -2,8 +2,8 @@
 using namespace std;
 
 int main(){
-    freopen("input_lsr_polynomial.txt", "r", stdin);
-    freopen("output_lsr_polynomial.txt", "w", stdout);
+    freopen("input/input_lsr_polynomial.txt", "r", stdin);
+    freopen("output/output_lsr_polynomial.txt", "w", stdout);
     
     int n, degree;
     cin >> n >> degree;

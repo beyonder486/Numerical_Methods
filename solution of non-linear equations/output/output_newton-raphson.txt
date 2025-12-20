@@ -1,0 +1,29 @@
+========== TEST CASE 1 ==========
+
+Initial guess: -1.0000000000
+Tolerance: 2.0000000000
+
+Iter x_n                 f(x_n)              
+
+========== WARNING ==========
+Maximum iterations reached without convergence.
+Last approximation: -1.0000000000
+f(x): -1.0000000000e+00
+
+========== TEST CASE 2 ==========
+
+Initial guess: 0.1000000000
+Tolerance: 0.0000010000
+
+Iter x_n                 f(x_n)              
+1    0.1000000000        9.7010000000e-01    
+2    1.7276845638        9.5491004824e-01    
+3    1.6346289494        1.2361166459e-01    
+4    1.6184984322        3.3634863998e-03    
+5    1.6180343671        2.7380882983e-06    
+
+========== RESULT ==========
+Root: 1.6180339888
+Iterations: 5
+f(root): 1.8198775820e-12
+

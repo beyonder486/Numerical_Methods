@@ -1,60 +1,98 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-double f(double x){
-    return 2*x*x-9*x+2;
+double f(double x) {
+    return 2*x*x - 9*x + 2;
 }
 
-int main(){
-    freopen("input_bisection.txt", "r", stdin);
-    freopen("output_bisection.txt", "w", stdout);
-    
-    double a, b, tolerance;
-    int maxIterations;
-    cin >> a >> b >> tolerance >> maxIterations;
-    
-    double limit=0;
-    double res=0,r=0;
-    bool tf1=false,tf2=false;
-    if(fabs(f(a))<tolerance){
-        tf1=true;
-        res=a;
-    }
-    while(f(a)*f(b)>0 && limit<maxIterations){
-        if(fabs(f(b))<tolerance){
-            tf2=true;
-            r=b;
-        }
-        b++;
-        limit++;
-    }
-    
-    if(f(a)*f(b)>0){
-        cout << "Error: Could not find interval with sign change!" << endl;
-        if(tf1) cout << res << endl;
-        if(tf2) cout << r << endl;
+int main() {
+    ifstream input("input/input_bisection.txt");
+    ofstream output("output/output_bisection.txt");
+
+    if (!input.is_open()) {
+        cerr << "Error: Cannot open input file\n";
         return 1;
     }
-    
-    double c=(a+b)/2;
-    int i=0;
-    while(fabs(f(c))>tolerance && i<maxIterations){
-        if(f(a)*f(c)<0)b=c;
-        else a=c;
-        c=(a+b)/2;
-        i++;
-    }
-    
-    cout << "\n========== BISECTION METHOD RESULT ==========" << endl;
-    if(tf1){
-        cout << "Root found at: " << fixed << setprecision(10) << res << endl;
-    }
-    if(tf2){
-        cout << "Root found at: " << fixed << setprecision(10) << r << endl;
-    }
-    cout << "Root: " << fixed << setprecision(10) << c << endl;
-    cout << "Iterations: " << i << endl;
-    cout << "f(" << c << ") = " << scientific << f(c) << endl;
 
+    int testCases;
+    input >> testCases;
+
+    for (int tc = 1; tc <= testCases; tc++) {
+        double a, b, tolerance;
+        int maxIterations;
+        input >> a >> b >> tolerance >> maxIterations;
+
+        output << "========== TEST CASE " << tc << " ==========\n\n";
+
+        if (a > b) swap(a, b);
+
+        if (fabs(f(a)) < tolerance) {
+            output << "Root found at a = " << fixed << setprecision(10) << a << "\n";
+            output << "f(a) = " << scientific << f(a) << "\n\n";
+            continue;
+        }
+
+        if (fabs(f(b)) < tolerance) {
+            output << "Root found at b = " << fixed << setprecision(10) << b << "\n";
+            output << "f(b) = " << scientific << f(b) << "\n\n";
+            continue;
+        }
+
+        if (f(a) * f(b) >= 0) {
+            output << "ERROR: No sign change in interval ["
+                   << a << ", " << b << "]\n\n";
+            continue;
+        }
+
+        output << "Initial interval: [" << a << ", " << b << "]\n";
+        output << "Tolerance: " << tolerance << "\n\n";
+
+        output << left << setw(5) << "Iter"
+               << setw(15) << "a"
+               << setw(15) << "b"
+               << setw(15) << "c"
+               << setw(15) << "f(c)" << "\n";
+
+        bool converged = false;
+        double c = a;
+
+        for (int iter = 1; iter <= maxIterations; iter++) {
+            c = (a + b) / 2.0;
+            double fc = f(c);
+
+            output << left << setw(5) << iter
+                   << setw(15) << a
+                   << setw(15) << b
+                   << setw(15) << c
+                   << setw(15) << scientific << fc << fixed << "\n";
+
+            if (fabs(fc) < tolerance || fabs(b - a) < tolerance) {
+                converged = true;
+                output << "\n========== RESULT ==========\n";
+                output << "Root: " << fixed << setprecision(10) << c << "\n";
+                output << "Iterations: " << iter << "\n";
+                output << "f(root): " << scientific << fc << "\n";
+                output << "Final interval width: " << fabs(b - a) << "\n\n";
+                break;
+            }
+
+            if (f(a) * fc < 0)
+                b = c;
+            else
+                a = c;
+        }
+
+        if (!converged) {
+            output << "\n========== WARNING ==========\n";
+            output << "Maximum iterations reached without convergence.\n";
+            output << "Last approximation: " << fixed << setprecision(10) << c << "\n";
+            output << "f(x): " << scientific << f(c) << "\n\n";
+        }
+    }
+
+    input.close();
+    output.close();
+
+    cout << "All test cases processed successfully!\n";
     return 0;
 }

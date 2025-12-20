@@ -1,6 +1,0 @@
-
-========== REGULAR FALSI (FALSE POSITION) METHOD RESULT ==========
-Root: 0.2344355677
-Iterations: 6
-f(0.2344355677) = -3.8363605182e-08
-Tolerance: 0.0000001000

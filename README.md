@@ -102,6 +102,7 @@ The Bisection Method is a root-finding algorithm that repeatedly bisects an inte
 #### Input of Bisection Method
 **Format:**
 ```
+Testcases
 a b tolerance maxIterations
 ```
 **Parameters:**
@@ -112,6 +113,8 @@ a b tolerance maxIterations
 
 **Example Input:** (`input_bisection.txt`)
 ```
+2
+0 1 0.0001 100
 0 5 0.0001 100
 ```
 
@@ -120,10 +123,38 @@ a b tolerance maxIterations
 #### Output of Bisection Method
 **File:** `output_bisection.txt`
 ```
-========== BISECTION METHOD RESULT ==========
-Root: 0.2352941176
-Iterations: 18
-f(0.2352941176) = 1.234567e-05
+========== TEST CASE 1 ==========
+
+Initial interval: [0, 1]
+Tolerance: 0.0001
+
+Iter a              b              c              f(c)           
+1    0              1              0.5            -2.000000e+00  
+2    0.000000       0.500000       0.250000       -1.250000e-01  
+3    0.000000       0.250000       0.125000       9.062500e-01   
+4    0.125000       0.250000       0.187500       3.828125e-01   
+5    0.187500       0.250000       0.218750       1.269531e-01   
+6    0.218750       0.250000       0.234375       4.882812e-04   
+7    0.234375       0.250000       0.242188       -6.237793e-02  
+8    0.234375       0.242188       0.238281       -3.097534e-02  
+9    0.234375       0.238281       0.236328       -1.525116e-02  
+10   0.234375       0.236328       0.235352       -7.383347e-03  
+11   0.234375       0.235352       0.234863       -3.448009e-03  
+12   0.234375       0.234863       0.234619       -1.479983e-03  
+13   0.234375       0.234619       0.234497       -4.958808e-04  
+14   0.234375       0.234497       0.234436       -3.807247e-06  
+
+========== RESULT ==========
+Root: 0.2344360352
+Iterations: 14
+f(root): -3.8072466850e-06
+Final interval width: 1.2207031250e-04
+
+========== TEST CASE 2 ==========
+
+ERROR: No sign change in interval [0.0000000000e+00, 5.0000000000e+00]
+
+
 ```
 
 ---
@@ -158,6 +189,7 @@ x_{n+1} = x_n - f(x_n)/f'(x_n)
 #### Input of Newton-Raphson Method
 **Format:**
 ```
+Testcases
 a b step tolerance maxIterations
 ```
 **Parameters:**
@@ -169,23 +201,44 @@ a b step tolerance maxIterations
 
 **Example Input:** (`input_newton-raphson.txt`)
 ```
+2
 -1 2 0.1 1e-6 1000
-```
+-1 5 0.1 1e-6 1000
 
 ---
 
 #### Output of Newton-Raphson Method
 **File:** `output_newton-raphson.txt`
 ```
-========== NEWTON-RAPHSON METHOD RESULTS ==========
-Number of roots found: 3
-Roots:
-Root 1: -0.6180339887 (iterations: 5)
-Root 2: 0.6180339887 (iterations: 6)
-Root 3: 1.6180339887 (iterations: 7)
+========== TEST CASE 1 ==========
 
-Total iterations across all roots: 18
-```
+Initial guess: -1.0000000000
+Tolerance: 2.0000000000
+
+Iter x_n                 f(x_n)              
+
+========== WARNING ==========
+Maximum iterations reached without convergence.
+Last approximation: -1.0000000000
+f(x): -1.0000000000e+00
+
+========== TEST CASE 2 ==========
+
+Initial guess: 0.1000000000
+Tolerance: 0.0000010000
+
+Iter x_n                 f(x_n)              
+1    0.1000000000        9.7010000000e-01    
+2    1.7276845638        9.5491004824e-01    
+3    1.6346289494        1.2361166459e-01    
+4    1.6184984322        3.3634863998e-03    
+5    1.6180343671        2.7380882983e-06    
+
+========== RESULT ==========
+Root: 1.6180339888
+Iterations: 5
+f(root): 1.8198775820e-12
+
 
 ---
 
@@ -219,6 +272,7 @@ c = a - f(a)·(b-a)/(f(b)-f(a))
 #### Input of Regular Falsi Method
 **Format:**
 ```
+Testcases
 a b tolerance maxIterations
 ```
 **Parameters:**
@@ -229,7 +283,9 @@ a b tolerance maxIterations
 
 **Example Input:** (`input_regularfalsi.txt`)
 ```
-0 1 1e-7 100
+2
+0 2 1e-7 1000
+0 4 1e-8 500
 ```
 
 ---
@@ -237,11 +293,31 @@ a b tolerance maxIterations
 #### Output of Regular Falsi Method
 **File:** `output_regularfalsi.txt`
 ```
-========== REGULAR FALSI (FALSE POSITION) METHOD RESULT ==========
-Root: 0.2352941176
-Iterations: 8
-f(0.2352941176) = 1.234567e-08
-Tolerance: 0.0000001
+========== TEST CASE 1 ==========
+
+Initial interval: [0, 2]
+Tolerance: 1e-07
+
+Iter a              b              c              f(c)           
+1    0              2              0.666667       -1.777778e+00  
+2    0.000000       0.666667       0.352941       -2.214533e-01  
+3    0.000000       0.352941       0.317757       -2.236003e-02  
+4    0.000000       0.317757       0.314244       -2.208034e-03  
+5    0.000000       0.314244       0.313897       -2.175608e-04  
+6    0.000000       0.313897       0.313863       -2.143192e-05  
+7    0.000000       0.313863       0.313860       -2.111214e-06  
+8    0.000000       0.313860       0.313859       -2.079708e-07  
+9    0.000000       0.313859       0.313859       -2.048672e-08  
+
+========== RESULT ==========
+Root: 0.3138593419
+Iterations: 9
+f(root): -2.0486724761e-08
+
+========== TEST CASE 2 ==========
+
+ERROR: No sign change in interval [0.0000000000e+00, 4.0000000000e+00]
+
 ```
 
 ---
@@ -276,6 +352,7 @@ x_{n+1} = x_n - f(x_n)·(x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 #### Input of Secant Method
 **Format:**
 ```
+Testcases
 a b step tolerance maxIterations
 ```
 **Parameters:**
@@ -287,7 +364,10 @@ a b step tolerance maxIterations
 
 **Example Input:** (`input_secant.txt`)
 ```
--3 3 0.1 1e-6 1000
+2
+-3 3 1e-6 1000
+-3 6 1e-6 1000
+
 ```
 
 ---
@@ -295,14 +375,47 @@ a b step tolerance maxIterations
 #### Output of Secant Method
 **File:** `output_secant.txt`
 ```
-========== SECANT METHOD RESULTS ==========
-Number of roots found: 3
-Roots:
-Root 1: -0.6180339887 (iterations: 7)
-Root 2: 0.6180339887 (iterations: 8)
-Root 3: 1.6180339887 (iterations: 8)
+========== TEST CASE 1 ==========
 
-Total iterations across all roots: 23
+Initial guesses: x0 = -3.0000000000, x1 = 3.0000000000
+Tolerance: 0.0000010000
+Max iterations: 1000
+
+Iter x0             x1             x2             f(x2)          
+
+WARNING: Denominator near zero. Secant method fails.
+
+========== WARNING ==========
+Method did not converge within the maximum iterations.
+Last approximation: 3.0000000000
+f(x): 5.5000000000e+01
+
+========== TEST CASE 2 ==========
+
+Initial guesses: x0 = -3.0000000000, x1 = 6.0000000000
+Tolerance: 0.0000010000
+Max iterations: 1000
+
+Iter x0             x1             x2             f(x2)          
+1    -3.0000000000  6.0000000000   -3.4365079365  1.0503757994e+02
+2    6.0000000000   -3.4365079365  -4.3509196711  3.0257239942e+02
+3    -3.4365079365  -4.3509196711  -2.9502767196  5.0649528275e+01
+4    -4.3509196711  -2.9502767196  -2.6686750355  3.0354932576e+01
+5    -2.9502767196  -2.6686750355  -2.2474791535  1.1360755424e+01
+6    -2.6686750355  -2.2474791535  -1.9955543998  4.9115023246e+00
+7    -2.2474791535  -1.9955543998  -1.8036982276  1.8241566079e+00
+8    -1.9955543998  -1.8036982276  -1.6903401082  5.9212669794e-01
+9    -1.8036982276  -1.6903401082  -1.6358589886  1.3305745236e-01
+10   -1.6903401082  -1.6358589886  -1.6200680833  1.4771481717e-02
+11   -1.6358589886  -1.6200680833  -1.6180961244  4.4966716366e-04
+12   -1.6200680833  -1.6180961244  -1.6180342101  1.6020003892e-06
+13   -1.6180961244  -1.6180342101  -1.6180339888  1.7480505932e-10
+
+========== RESULT ==========
+Root: -1.6180339888
+Iterations: 13
+f(root): 1.7480505932e-10
+
 ```
 
 ---
@@ -435,10 +548,10 @@ xp
 Class Intervals and Midpoints:
        Interval    Midpoint(x)  Frequency(y)
 ---------------------------------------------
-     10-     20             15              5
-     20-     30             25              8
-     30-     40             35             12
-     40-    50             45              7
+     10 - 20             15              5
+     20 - 30             25              8
+     30 - 40             35             12
+     40 - 50             45              7
 
 Backward Difference Table:
 ...

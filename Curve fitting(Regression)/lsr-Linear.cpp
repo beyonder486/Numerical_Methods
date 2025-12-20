@@ -2,8 +2,8 @@
 using namespace std;
 
 int main(){
-    freopen("input_lsr_Linear.txt", "r", stdin);
-    freopen("output_lsr_Linear.txt", "w", stdout);
+    freopen("input/input_lsr_Linear.txt", "r", stdin);
+    freopen("output/output_lsr_Linear.txt", "w", stdout);
     
     int n;
     cin >> n;

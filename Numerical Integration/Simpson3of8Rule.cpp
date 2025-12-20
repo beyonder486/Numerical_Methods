@@ -7,8 +7,8 @@ double f(double x){
 }
 
 int main(){
-    freopen("input_simpson3of8.txt", "r", stdin);
-    freopen("output_simpson3of8.txt", "w", stdout);
+    freopen("input/input_simpson3of8.txt", "r", stdin);
+    freopen("output/output_simpson3of8.txt", "w", stdout);
     
     double a, b;
     int n;

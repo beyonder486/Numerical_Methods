@@ -2,8 +2,8 @@
 using namespace std;
 
 int main(){
-    freopen("input_forwardinterpolation.txt", "r", stdin);
-    freopen("output_forwardinterpolation.txt", "w", stdout);
+    freopen("input/input_forwardinterpolation.txt", "r", stdin);
+    freopen("output/output_forwardinterpolation.txt", "w", stdout);
     
     int n;
     cout << "Enter number of class intervals: ";
