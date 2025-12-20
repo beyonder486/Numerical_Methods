@@ -72,7 +72,6 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
     - [Input](#input-of-exponential-least-squares-regression)
     - [Output](#output-of-exponential-least-squares-regression)
 
----
 
 ## Solution of Non-Linear Equations
 
@@ -91,13 +90,11 @@ The Bisection Method is a root-finding algorithm that repeatedly bisects an inte
 4. If f(a)·f(c) < 0, set b = c; else set a = c
 5. Repeat until convergence
 
----
 
 #### Code of Bisection Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/bisection-Method.cpp)**
 
----
 
 #### Input of Bisection Method
 **Format:**
@@ -118,7 +115,6 @@ a b tolerance maxIterations
 0 5 0.0001 100
 ```
 
----
 
 #### Output of Bisection Method
 **File:** `output_bisection.txt`
@@ -157,8 +153,6 @@ ERROR: No sign change in interval [0.0000000000e+00, 5.0000000000e+00]
 
 ```
 
----
-
 ### Newton-Raphson Method
 
 #### Theory of Newton-Raphson Method
@@ -178,13 +172,11 @@ x_{n+1} = x_n - f(x_n)/f'(x_n)
 - May fail if f'(x) ≈ 0
 - May not converge if initial guess is far from root
 
----
 
 #### Code of Newton-Raphson Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/newton-raphson-Method.cpp)**
 
----
 
 #### Input of Newton-Raphson Method
 **Format:**
@@ -204,8 +196,7 @@ a b step tolerance maxIterations
 2
 -1 2 0.1 1e-6 1000
 -1 5 0.1 1e-6 1000
-
----
+```
 
 #### Output of Newton-Raphson Method
 **File:** `output_newton-raphson.txt`
@@ -239,8 +230,7 @@ Root: 1.6180339888
 Iterations: 5
 f(root): 1.8198775820e-12
 
-
----
+```
 
 ### Regular Falsi (False Position) Method
 
@@ -261,13 +251,11 @@ c = a - f(a)·(b-a)/(f(b)-f(a))
 - Can be slower than Newton-Raphson
 - May converge from one side only
 
----
 
 #### Code of Regular Falsi Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/regularfalsi-FalsePosition-Method.cpp)**
 
----
 
 #### Input of Regular Falsi Method
 **Format:**
@@ -287,9 +275,6 @@ a b tolerance maxIterations
 0 2 1e-7 1000
 0 4 1e-8 500
 ```
-
----
-
 #### Output of Regular Falsi Method
 **File:** `output_regularfalsi.txt`
 ```
@@ -320,7 +305,6 @@ ERROR: No sign change in interval [0.0000000000e+00, 4.0000000000e+00]
 
 ```
 
----
 
 ### Secant Method
 
@@ -341,13 +325,11 @@ x_{n+1} = x_n - f(x_n)·(x_n - x_{n-1})/(f(x_n) - f(x_{n-1}))
 - Requires two initial guesses
 - May fail if f(x_n) ≈ f(x_{n-1})
 
----
 
 #### Code of Secant Method
 
 **[📂 View Source Code](solution%20of%20non-linear%20equations/secant-Method.cpp)**
 
----
 
 #### Input of Secant Method
 **Format:**
@@ -369,8 +351,6 @@ a b step tolerance maxIterations
 -3 6 1e-6 1000
 
 ```
-
----
 
 #### Output of Secant Method
 **File:** `output_secant.txt`
@@ -418,8 +398,6 @@ f(root): 1.7480505932e-10
 
 ```
 
----
-
 ## Interpolation and Approximation
 
 ### Newton's Forward Interpolation
@@ -438,13 +416,11 @@ where p = (x - x₀)/h
 - Interpolation near the beginning of data
 - Class interval data (grouped frequency distributions)
 
----
 
 #### Code of Newton's Forward Interpolation
 
 **[📂 View Source Code](Interpolation%20and%20approximation/forwardinterpolation.cpp)**
 
----
 
 #### Input of Newton's Forward Interpolation
 **Format:**
@@ -471,8 +447,6 @@ xp
 25
 ```
 
----
-
 #### Output of Newton's Forward Interpolation
 **File:** `output_forwardinterpolation.txt`
 ```
@@ -493,8 +467,6 @@ Forward Difference Table:
 y(25) = 8.500000
 ```
 
----
-
 ### Newton's Backward Interpolation
 
 #### Theory of Newton's Backward Interpolation
@@ -511,13 +483,11 @@ where q = (x - xₙ)/h
 - Interpolation near the end of data
 - Class interval data with interpolation near upper bounds
 
----
 
 #### Code of Newton's Backward Interpolation
 
 **[📂 View Source Code](Interpolation%20and%20approximation/backwardinterpolation.cpp)**
 
----
 
 #### Input of Newton's Backward Interpolation
 **Format:**
@@ -540,8 +510,6 @@ xp
 45
 ```
 
----
-
 #### Output of Newton's Backward Interpolation
 **File:** `output_backwardinterpolation.txt`
 ```
@@ -560,8 +528,6 @@ Backward Difference Table:
 y(45) = 7.000000
 ```
 
----
-
 ### Newton's Divided Difference
 
 #### Theory of Newton's Divided Difference
@@ -577,13 +543,11 @@ y(x) = f[x₀] + (x-x₀)f[x₀,x₁] + (x-x₀)(x-x₁)f[x₀,x₁,x₂] + ...
 - Easy to add new data points
 - Provides error estimation
 
----
 
 #### Code of Newton's Divided Difference
 
 **[📂 View Source Code](Interpolation%20and%20approximation/divideddifference.cpp)**
 
----
 
 #### Input of Newton's Divided Difference
 **Format:**
@@ -611,7 +575,6 @@ xp
 2.5
 ```
 
----
 
 #### Output of Newton's Divided Difference
 **File:** `output_divideddifference.txt`
@@ -642,8 +605,6 @@ Term 4: 0.300000 (cumulative: 5.887500)
 Estimated truncation error: ≈ 0.125000
 ```
 
----
-
 ## Numerical Integration
 
 ### Simpson's 1/3 Rule
@@ -663,13 +624,11 @@ where i = odd indices, j = even indices (excluding endpoints)
 
 **Error:** O(h⁴)
 
----
 
 #### Code of Simpson's 1/3 Rule
 
 **[📂 View Source Code](Numerical%20Integration/simpson's1of3Rule.cpp)**
 
----
 
 #### Input of Simpson's 1/3 Rule
 **Format:**
@@ -686,7 +645,6 @@ a b n
 0 3.14159 6
 ```
 
----
 
 #### Output of Simpson's 1/3 Rule
 **File:** `output_simpson1of3.txt`
@@ -699,8 +657,6 @@ Step size (h): 0.523598
 
 Integral value: 2.000109
 ```
-
----
 
 ### Simpson's 3/8 Rule
 
@@ -719,13 +675,11 @@ where i = non-multiples of 3, j = multiples of 3 (excluding endpoints)
 
 **Error:** O(h⁴)
 
----
 
 #### Code of Simpson's 3/8 Rule
 
 **[📂 View Source Code](Numerical%20Integration/Simpson's3of8Rule.cpp)**
 
----
 
 #### Input of Simpson's 3/8 Rule
 **Format:**
@@ -742,7 +696,6 @@ a b n
 0 3.14159 6
 ```
 
----
 
 #### Output of Simpson's 3/8 Rule
 **File:** `output_simpson3of8.txt`
@@ -755,8 +708,6 @@ Step size (h): 0.523598
 
 Integral value: 2.000459
 ```
-
----
 
 ## Curve Fitting (Regression)
 
@@ -775,13 +726,11 @@ b = (Σy - aΣx)/n
 - R² (Coefficient of Determination): Measures how well the line fits the data (0 to 1)
 - Correlation Coefficient (r): Measures linear relationship strength (-1 to 1)
 
----
 
 #### Code of Linear Least Squares Regression
 
 **[📂 View Source Code](Curve%20fitting(Regression)/lsr-Linear.cpp)**
 
----
 
 #### Input of Linear Least Squares Regression
 **Format:**
@@ -805,8 +754,6 @@ xₙ yₙ
 4.0 8.1
 5.0 9.8
 ```
-
----
 
 #### Output of Linear Least Squares Regression
 **File:** `output_lsr_Linear.txt`
@@ -836,8 +783,6 @@ Correlation Coefficient (r):       0.9972
 Interpretation: Excellent fit (R² > 0.9)
 ```
 
----
-
 ### Polynomial Least Squares Regression
 
 #### Theory of Polynomial Least Squares Regression
@@ -853,13 +798,10 @@ The method solves the system of normal equations using Gauss-Jordan elimination 
 [Σxᵐ  Σxᵐ⁺¹ ... Σx²ᵐ] [aₘ]   [Σy·xᵐ]
 ```
 
----
-
 #### Code of Polynomial Least Squares Regression
 
 **[📂 View Source Code](Curve%20fitting(Regression)/lsr_polynomial.cpp)**
 
----
 
 #### Input of Polynomial Least Squares Regression
 **Format:**
@@ -885,7 +827,6 @@ xₙ yₙ
 5.0 23.5
 ```
 
----
 
 #### Output of Polynomial Least Squares Regression
 **File:** `output_lsr_polynomial.txt`
@@ -897,8 +838,6 @@ Number of data points: 5
 Best fit polynomial equation:
 y = 0.371429 + 0.571429x + 0.928571x^2
 ```
-
----
 
 ### Exponential Least Squares Regression
 
@@ -916,13 +855,11 @@ By taking logarithms: ln(y) = ln(a) + bx, which is linear in ln(y).
 **Requirements:**
 - All y values must be positive (cannot take log of negative numbers)
 
----
 
 #### Code of Exponential Least Squares Regression
 
 **[📂 View Source Code](Curve%20fitting(Regression)/lsr_transcedental.cpp)**
 
----
 
 #### Input of Exponential Least Squares Regression
 **Format:**
@@ -947,8 +884,6 @@ xₙ yₙ
 5.0 132.5
 ```
 
----
-
 #### Output of Exponential Least Squares Regression
 **File:** `output_lsr_transcedental.txt`
 ```
@@ -959,7 +894,6 @@ Best fit exponential equation:
 y = 1.025643 * e^(1.012345x)
 ```
 
----
 
 ## Usage Instructions
 
@@ -1001,7 +935,6 @@ Results are written to corresponding output files:
 - `output_newton-raphson.txt`
 - etc.
 
----
 
 ## Error Handling
 
@@ -1012,4 +945,3 @@ All programs include comprehensive error checking:
 - **Convergence** monitoring
 - **Iteration limits** to prevent infinite loops
 
----
