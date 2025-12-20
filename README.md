@@ -2,6 +2,10 @@
 
 A comprehensive collection of numerical methods implemented in C++ for solving various mathematical problems.
 
+Contributors:
+- Ahmed Kaif-2207025 (https://github.com/beyonder486)
+- Md. Manjar Hossan-2207029 (https://github.com/Manjar29)
+
 ## Table of Contents
 
 - [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
@@ -55,6 +59,40 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
     - [Input](#input-of-simpsons-38-rule)
     - [Output](#output-of-simpsons-38-rule)
 
+- [Numerical Differentiation](#numerical-differentiation)
+  - [Newton's Forward Difference](#newtons-forward-difference)
+    - [Theory](#theory-of-newtons-forward-difference)
+    - [Code](#code-of-newtons-forward-difference)
+    - [Input](#input-of-newtons-forward-difference)
+    - [Output](#output-of-newtons-forward-difference)
+  - [Newton's Backward Difference](#newtons-backward-difference)
+    - [Theory](#theory-of-newtons-backward-difference)
+    - [Code](#code-of-newtons-backward-difference)
+    - [Input](#input-of-newtons-backward-difference)
+    - [Output](#output-of-newtons-backward-difference)
+
+- [Solution of Linear Equations](#solution-of-linear-equations)
+  - [Gauss Elimination Method](#gauss-elimination-method)
+    - [Theory](#theory-of-gauss-elimination-method)
+    - [Code](#code-of-gauss-elimination-method)
+    - [Input](#input-of-gauss-elimination-method)
+    - [Output](#output-of-gauss-elimination-method)
+  - [Gauss-Jordan Method](#gauss-jordan-method)
+    - [Theory](#theory-of-gauss-jordan-method)
+    - [Code](#code-of-gauss-jordan-method)
+    - [Input](#input-of-gauss-jordan-method)
+    - [Output](#output-of-gauss-jordan-method)
+  - [LU Factorization Method](#lu-factorization-method)
+    - [Theory](#theory-of-lu-factorization-method)
+    - [Code](#code-of-lu-factorization-method)
+    - [Input](#input-of-lu-factorization-method)
+    - [Output](#output-of-lu-factorization-method)
+  - [Matrix Inverse Method](#matrix-inverse-method)
+    - [Theory](#theory-of-matrix-inverse-method)
+    - [Code](#code-of-matrix-inverse-method)
+    - [Input](#input-of-matrix-inverse-method)
+    - [Output](#output-of-matrix-inverse-method)
+
 - [Curve Fitting (Regression)](#curve-fitting-regression)
   - [Linear Least Squares Regression](#linear-least-squares-regression)
     - [Theory](#theory-of-linear-least-squares-regression)
@@ -71,6 +109,13 @@ A comprehensive collection of numerical methods implemented in C++ for solving v
     - [Code](#code-of-exponential-least-squares-regression)
     - [Input](#input-of-exponential-least-squares-regression)
     - [Output](#output-of-exponential-least-squares-regression)
+
+- [Solution of Differential Equations](#solution-of-differential-equations)
+  - [Runge-Kutta Method (4th Order)](#runge-kutta-method-4th-order)
+    - [Theory](#theory-of-runge-kutta-method)
+    - [Code](#code-of-runge-kutta-method)
+    - [Input](#input-of-runge-kutta-method)
+    - [Output](#output-of-runge-kutta-method)
 
 
 ## Solution of Non-Linear Equations
@@ -627,7 +672,7 @@ where i = odd indices, j = even indices (excluding endpoints)
 
 #### Code of Simpson's 1/3 Rule
 
-**[📂 View Source Code](Numerical%20Integration/simpson's1of3Rule.cpp)**
+**[📂 View Source Code](Numerical%20Integration/simpson1of3Rule.cpp)**
 
 
 #### Input of Simpson's 1/3 Rule
@@ -678,7 +723,7 @@ where i = non-multiples of 3, j = multiples of 3 (excluding endpoints)
 
 #### Code of Simpson's 3/8 Rule
 
-**[📂 View Source Code](Numerical%20Integration/Simpson's3of8Rule.cpp)**
+**[📂 View Source Code](Numerical%20Integration/Simpson3of8Rule.cpp)**
 
 
 #### Input of Simpson's 3/8 Rule
@@ -895,6 +940,783 @@ y = 1.025643 * e^(1.012345x)
 ```
 
 
+## Numerical Differentiation
+
+### Newton's Forward Difference
+
+#### Theory of Newton's Forward Difference
+Newton's Forward Difference method is used to compute numerical derivatives from tabulated data using forward difference operators. It's particularly useful when data points are equally spaced.
+
+**Forward Difference Operators:**
+- **First Forward Difference:** Δf(x) = f(x+h) - f(x)
+- **Second Forward Difference:** Δ²f(x) = Δf(x+h) - Δf(x)
+- **nth Forward Difference:** Δⁿf(x) = Δⁿ⁻¹f(x+h) - Δⁿ⁻¹f(x)
+
+**Derivative Formulas:**
+- **First Derivative:** f'(x₀) ≈ Δf(x₀)/h
+- **Second Derivative:** f''(x₀) ≈ Δ²f(x₀)/h²
+
+**When to Use:**
+- Data points are equally spaced (uniform h)
+- Approximating derivatives at or near the beginning of tabulated data
+- Building difference tables for analysis
+
+**Advantages:**
+- Simple and straightforward
+- Works well with equally spaced data
+- Easy to implement
+
+**Limitations:**
+- Requires equally spaced points
+- Less accurate for higher-order derivatives
+- Best for points at the beginning of the table
+
+#### Code of Newton's Forward Difference
+
+**[📂 View Source Code](Numerical%20Differentiation/Newton_forward_diff.cpp)**
+
+#### Input of Newton's Forward Difference
+**Format:**
+```
+T
+n
+x₁ x₂ x₃ ... xₙ
+```
+**Parameters:**
+- `T`: Number of test cases
+- `n`: Number of data points
+- `x₁ x₂ ... xₙ`: Equally spaced x values
+
+**Note:** The function f(x) is defined in the code. Modify the `func()` to change the function.
+
+**Example Input:** (`forward_input.txt`)
+```
+2
+5
+0.0 0.2 0.4 0.6 0.8
+6
+1.0 1.1 1.2 1.3 1.4 1.5
+```
+
+#### Output of Newton's Forward Difference
+**File:** `forward_output.txt`
+```
+Test Case 1:
+Given Data Table:
+         x      f(x)
+       0.0       0.0
+       0.2    0.2387
+       0.4    0.5492
+       0.6    0.9272
+       0.8    1.3693
+
+Forward Difference Table:
+         x      f(x)       Δ^1       Δ^2       Δ^3       Δ^4
+       0.0       0.0    0.2387    0.0718   -0.0135    0.0058
+       0.2    0.2387    0.3105    0.0583   -0.0077
+       0.4    0.5492    0.3688    0.0506
+       0.6    0.9272    0.4194
+       0.8    1.3693
+
+First Derivative:
+f'(0.0) = 1.1935
+f'(0.2) = 1.5525
+f'(0.4) = 1.8440
+f'(0.6) = 2.0970
+
+Second Derivative:
+f''(0.0) = 1.7950
+f''(0.2) = 1.4575
+f''(0.4) = 1.2650
+
+--------------------------------------
+```
+
+### Newton's Backward Difference
+
+#### Theory of Newton's Backward Difference
+Newton's Backward Difference method computes numerical derivatives using backward difference operators. It's ideal for computing derivatives at or near the end of tabulated data.
+
+**Backward Difference Operators:**
+- **First Backward Difference:** ∇f(x) = f(x) - f(x-h)
+- **Second Backward Difference:** ∇²f(x) = ∇f(x) - ∇f(x-h)
+- **nth Backward Difference:** ∇ⁿf(x) = ∇ⁿ⁻¹f(x) - ∇ⁿ⁻¹f(x-h)
+
+**Derivative Formulas:**
+- **First Derivative:** f'(xₙ) ≈ ∇f(xₙ)/h
+- **Second Derivative:** f''(xₙ) ≈ ∇²f(xₙ)/h²
+
+**When to Use:**
+- Approximating derivatives at or near the end of tabulated data
+- Extrapolation scenarios
+- Equally spaced data points
+
+**Comparison with Forward Difference:**
+- Forward difference: Better for derivatives at beginning of data
+- Backward difference: Better for derivatives at end of data
+- Both require equally spaced points
+
+#### Code of Newton's Backward Difference
+
+**[📂 View Source Code](Numerical%20Differentiation/Newton_backward_diff.cpp)**
+
+#### Input of Newton's Backward Difference
+**Format:**
+```
+T
+n
+x₁ x₂ x₃ ... xₙ
+```
+**Parameters:**
+- `T`: Number of test cases
+- `n`: Number of equally spaced data points
+- `x₁ x₂ ... xₙ`: x values (must be equally spaced)
+
+**Example Input:** (`backward_input.txt`)
+```
+2
+5
+0.0 0.2 0.4 0.6 0.8
+6
+1.0 1.1 1.2 1.3 1.4 1.5
+```
+
+#### Output of Newton's Backward Difference
+**File:** `backward_output.txt`
+```
+Test Case 1:
+Given Data Table:
+         x      f(x)
+       0.0       0.0
+       0.2    0.2387
+       0.4    0.5492
+       0.6    0.9272
+       0.8    1.3693
+
+Backward Difference Table:
+         x      f(x)       ∇^1       ∇^2       ∇^3       ∇^4
+       0.0       0.0
+       0.2    0.2387    0.2387
+       0.4    0.5492    0.3105    0.0718
+       0.6    0.9272    0.3780    0.0675   -0.0043
+       0.8    1.3693    0.4421    0.0641   -0.0034    0.0009
+
+First Derivative:
+f'(0.2) = 1.1935
+f'(0.4) = 1.5525
+f'(0.6) = 1.8900
+f'(0.8) = 2.2105
+
+Second Derivative:
+f''(0.4) = 1.7950
+f''(0.6) = 1.6875
+f''(0.8) = 1.6025
+
+--------------------------------------
+```
+
+
+## Solution of Differential Equations
+
+### Runge-Kutta Method (4th Order)
+
+#### Theory of Runge-Kutta Method
+The 4th Order Runge-Kutta (RK4) method is one of the most popular numerical methods for solving ordinary differential equations (ODEs) of the form: dy/dx = f(x, y) with initial condition y(x₀) = y₀.
+
+**Algorithm:**
+For each step from xₙ to xₙ₊₁:
+1. **k₁ = h·f(xₙ, yₙ)**
+2. **k₂ = h·f(xₙ + h/2, yₙ + k₁/2)**
+3. **k₃ = h·f(xₙ + h/2, yₙ + k₂/2)**
+4. **k₄ = h·f(xₙ + h, yₙ + k₃)**
+5. **yₙ₊₁ = yₙ + (k₁ + 2k₂ + 2k₃ + k₄)/6**
+
+**Physical Interpretation:**
+- k₁: Slope at the beginning of interval
+- k₂: Slope at the midpoint using k₁
+- k₃: Slope at the midpoint using k₂
+- k₄: Slope at the end using k₃
+- Final value: Weighted average of these slopes
+
+**Advantages:**
+- **4th order accuracy:** Error is O(h⁵) per step
+- **Single-step method:** Only needs current point
+- **Self-starting:** Doesn't require previous points
+- **Well-balanced:** Good accuracy vs computational cost
+
+**When to Use:**
+- General-purpose ODE solver
+- Moderate accuracy requirements
+- Non-stiff differential equations
+- Initial value problems
+
+**Limitations:**
+- Not ideal for stiff equations (use implicit methods)
+- Fixed step size (adaptive versions exist)
+- Can fail near singularities
+- Accumulates error over many steps
+
+**Step Size Selection:**
+- Smaller h → More accurate but more computations
+- Larger h → Faster but less accurate, may diverge
+- Rule of thumb: Start with h = 0.1, adjust based on results
+
+#### Code of Runge-Kutta Method
+
+**[📂 View Source Code](solution%20of%20differential%20equations/RK_method.cpp)**
+
+#### Input of Runge-Kutta Method
+**Format:**
+```
+T
+functionNumber x₀ y₀ xₙ h
+```
+**Parameters:**
+- `T`: Number of test cases
+- `functionNumber`: Which differential equation to solve (1-4)
+  - 1: dy/dx = x + y (standard example)
+  - 2: dy/dx = -50(y - cos(x)) (stiff equation)
+  - 3: dy/dx = y² (can blow up)
+  - 4: dy/dx = -y/x (has singularity at x=0)
+- `x₀`: Initial x value
+- `y₀`: Initial y value (initial condition)
+- `xₙ`: Target x value
+- `h`: Step size
+
+**Example Input:** (`rk_input.txt`)
+```
+4
+1 0 1 1 0.2
+2 0 1 0.5 0.01
+3 0 0.5 1 0.1
+4 1 1 2 0.1
+```
+
+#### Output of Runge-Kutta Method
+**File:** `rk_output.txt`
+```
+RUNGE-KUTTA METHOD (4th ORDER)
+=============================
+
+Test Case 1:
+Differential Equation: dy/dx = x + y
+Initial Condition: y(0) = 1
+Step size (h) = 0.2
+Target x = 1
+
+Step-by-step Computation:
+       x           y          k1          k2          k3          k4
+  0.0000      1.0000      0.2000      0.2200      0.2210      0.2442
+  0.2000      1.2214      0.2843      0.3127      0.3142      0.3484
+  0.4000      1.4918      0.3784      0.4162      0.4183      0.4644
+  0.6000      1.8221      0.4844      0.5329      0.5357      0.5948
+  0.8000      2.2255      0.6051      0.6656      0.6692      0.7442
+
+Final Result:
+y(1.0) = 2.7183
+
+Status: ✓ Solution computed successfully
+
+--------------------------------------
+
+Test Case 2:
+Differential Equation: dy/dx = -50(y - cos(x))
+Initial Condition: y(0) = 1
+Step size (h) = 0.01
+Target x = 0.5
+
+Step-by-step Computation:
+       x           y          k1          k2          k3          k4
+  0.0000      1.0000      0.0000     -0.2500     -0.1250     -0.4981
+  0.0100      0.8771     -0.6207     -0.8677     -0.7442     -1.1087
+...
+
+Final Result:
+y(0.5) = 0.8776
+
+Status: ✓ Solution computed successfully
+
+--------------------------------------
+
+Test Case 3:
+Differential Equation: dy/dx = y²
+Initial Condition: y(0) = 0.5
+Step size (h) = 0.1
+Target x = 1
+
+Step-by-step Computation:
+       x           y          k1          k2          k3          k4
+  0.0000      0.5000      0.0250      0.0256      0.0257      0.0263
+  0.1000      0.5256      0.0276      0.0283      0.0284      0.0291
+...
+  0.8000      0.9756      0.0951      0.1000      0.1003      0.1057
+
+*** NUMERICAL INSTABILITY DETECTED ***
+Solution diverged at x = 0.9
+
+Status: ✗ RK method failed for this problem/step size
+
+--------------------------------------
+
+Test Case 4:
+Differential Equation: dy/dx = -y/x
+Initial Condition: y(1) = 1
+Step size (h) = 0.1
+Target x = 2
+
+Final Result:
+y(2.0) = 0.5000
+
+Status: ✓ Solution computed successfully
+
+--------------------------------------
+```
+
+
+## Solution of Linear Equations
+
+### Gauss Elimination Method
+
+#### Theory of Gauss Elimination Method
+Gauss Elimination is a systematic method for solving systems of linear equations by transforming the augmented matrix into upper triangular form, then using back substitution.
+
+**Process:**
+1. **Forward Elimination:** Transform [A|b] into upper triangular form
+2. **Back Substitution:** Solve from bottom to top
+
+**Algorithm:**
+- For each row i (pivot row):
+  - Make diagonal element = 1 (optional normalization)
+  - Eliminate all elements below the pivot
+- Solve xₙ, xₙ₋₁, ..., x₁ using back substitution
+
+**System Types:**
+- **Unique Solution:** Non-singular matrix (det ≠ 0)
+- **No Solution:** Inconsistent system (0 = non-zero)
+- **Infinite Solutions:** Dependent system (rank < n)
+
+#### Code of Gauss Elimination Method
+
+**[📂 View Source Code](Solution%20of%20Linear%20equations/GaussElemination.cpp)**
+
+#### Input of Gauss Elimination Method
+**Format:**
+```
+T
+n
+a₁₁ a₁₂ ... a₁ₙ b₁
+a₂₁ a₂₂ ... a₂ₙ b₂
+...
+aₙ₁ aₙ₂ ... aₙₙ bₙ
+```
+**Parameters:**
+- `T`: Number of test cases
+- `n`: Number of variables/equations
+- `[A|b]`: Augmented matrix (coefficient matrix + constants vector)
+
+**Example Input:** (`gauss_input.txt`)
+```
+2
+3
+2 1 -1 8
+-3 -1 2 -11
+-2 1 2 -3
+3
+1 2 3 14
+2 -1 1 5
+3 1 -1 2
+```
+
+#### Output of Gauss Elimination Method
+**File:** `gauss_output.txt`
+```
+GAUSS ELIMINATION METHOD
+========================
+
+Test Case 1:
+Original Augmented Matrix:
+         2         1        -1         8
+        -3        -1         2       -11
+        -2         1         2        -3
+
+Upper Triangular Form:
+         1       0.5      -0.5         4
+         0         1  -1.33333  -2.66667
+         0         0         1        -1
+
+Solution:
+x1 =      2.000000
+x2 =     -4.000000
+x3 =     -1.000000
+
+--------------------------------------
+```
+
+### Gauss-Jordan Method
+
+#### Theory of Gauss-Jordan Method
+Gauss-Jordan is an extension of Gauss Elimination that reduces the augmented matrix to Reduced Row Echelon Form (RREF), eliminating the need for back substitution.
+
+**Process:**
+1. **Partial Pivoting:** Find largest element in column and swap rows for numerical stability
+2. **Normalize:** Make pivot element = 1
+3. **Eliminate:** Make all other elements in the pivot column = 0 (both above and below)
+4. **Result:** Identity matrix on left, solution on right
+
+**Advantages:**
+- Direct solution (no back substitution needed)
+- More numerically stable with partial pivoting
+- Can detect singular/dependent systems
+- Provides rank of matrix
+
+**System Analysis:**
+- **Rank = n:** Unique solution exists
+- **Rank < n:** Infinite solutions (n - rank free variables)
+- **0 = non-zero:** No solution (inconsistent)
+
+#### Code of Gauss-Jordan Method
+
+**[📂 View Source Code](Solution%20of%20Linear%20equations/Gauss_Jordan.cpp)**
+
+#### Input of Gauss-Jordan Method
+**Format:**
+```
+T
+n
+a₁₁ a₁₂ ... a₁ₙ b₁
+a₂₁ a₂₂ ... a₂ₙ b₂
+...
+aₙ₁ aₙ₂ ... aₙₙ bₙ
+```
+**Parameters:**
+- `T`: Number of test cases
+- `n`: Size of system (number of variables)
+- `[A|b]`: Augmented matrix
+
+**Example Input:** (`gauss_jordan_input.txt`)
+```
+3
+3
+2 1 -1 8
+-3 -1 2 -11
+-2 1 2 -3
+3
+1 2 3 14
+2 4 6 28
+3 1 -1 2
+2
+1 2 3
+2 4 6
+```
+
+#### Output of Gauss-Jordan Method
+**File:** `gauss_jordan_output.txt`
+```
+GAUSS JORDAN METHOD WITH SOLUTION ANALYSIS
+=========================================
+
+Test Case 1:
+Original Augmented Matrix:
+         2         1        -1         8
+        -3        -1         2       -11
+        -2         1         2        -3
+
+Reduced Row Echelon Form (RREF):
+         1         0         0         2
+         0         1         0        -4
+         0         0         1        -1
+
+System Analysis:
+Rank of coefficient matrix: 3
+→ Unique Solution Exists
+
+Solution:
+x1 = 2.000000
+x2 = -4.000000
+x3 = -1.000000
+
+--------------------------------------
+
+Test Case 2:
+Original Augmented Matrix:
+         1         2         3        14
+         2         4         6        28
+         3         1        -1         2
+
+Reduced Row Echelon Form (RREF):
+         1         0        -1    -1.667
+         0         1         2     7.833
+         0         0         0         0
+
+System Analysis:
+Rank of coefficient matrix: 2
+→ Infinite Solutions (Dependent system)
+   (1 free variable(s))
+
+--------------------------------------
+
+Test Case 3:
+Original Augmented Matrix:
+         1         2         3
+         2         4         6
+
+Reduced Row Echelon Form (RREF):
+         1         2         3
+         0         0         0
+
+System Analysis:
+Rank of coefficient matrix: 1
+→ No Solution (Inconsistent system)
+   (0 = non-zero constant in reduced form)
+
+--------------------------------------
+```
+
+### LU Factorization Method
+
+#### Theory of LU Factorization Method
+LU Factorization decomposes matrix A into the product of a Lower triangular matrix (L) and an Upper triangular matrix (U): A = L·U
+
+**Process:**
+1. **Decomposition:** Factor A into L and U
+   - L has 1's on diagonal
+   - U is upper triangular
+2. **Forward Substitution:** Solve Ly = b for y
+3. **Backward Substitution:** Solve Ux = y for x
+
+**Advantages:**
+- Efficient for multiple right-hand sides
+- Only decompose once, solve many times
+- Useful for computing determinant: det(A) = ∏(diagonal of U)
+
+**Limitations:**
+- Requires non-singular matrix (det ≠ 0)
+- Fails if any diagonal element of U becomes zero
+- Detects singular/dependent systems during decomposition
+
+**Applications:**
+- Solving Ax = b when A is reused with different b vectors
+- Matrix inversion
+- Computing determinants
+
+#### Code of LU Factorization Method
+
+**[📂 View Source Code](Solution%20of%20Linear%20equations/LU_Fact.cpp)**
+
+#### Input of LU Factorization Method
+**Format:**
+```
+T
+n
+a₁₁ a₁₂ ... a₁ₙ b₁
+a₂₁ a₂₂ ... a₂ₙ b₂
+...
+aₙ₁ aₙ₂ ... aₙₙ bₙ
+```
+**Parameters:**
+- `T`: Number of test cases
+- `n`: Matrix size
+- `[A|b]`: Augmented matrix
+
+**Example Input:** (`lu_input.txt`)
+```
+3
+3
+2 1 -1 8
+-3 -1 2 -11
+-2 1 2 -3
+3
+1 2 3 14
+2 4 6 28
+3 1 -1 2
+2
+1 2 3
+2 4 6
+```
+
+#### Output of LU Factorization Method
+**File:** `lu_output.txt`
+```
+LU FACTORIZATION METHOD
+=======================
+
+Test Case 1:
+Original Augmented Matrix [A|b]:
+    2.0000    1.0000   -1.0000    8.0000
+   -3.0000   -1.0000    2.0000  -11.0000
+   -2.0000    1.0000    2.0000   -3.0000
+
+Lower Triangular Matrix (L):
+  1.000000  0.000000  0.000000
+ -1.500000  1.000000  0.000000
+ -1.000000  4.000000  1.000000
+
+Upper Triangular Matrix (U):
+  2.000000  1.000000 -1.000000
+  0.000000  0.500000  0.500000
+  0.000000  0.000000  1.000000
+
+System Analysis:
+Rank of coefficient matrix: 3
+→ Unique Solution Exists
+
+Forward Substitution (Ly = b):
+y1 =     8.000000
+y2 =     1.000000
+y3 =    -1.000000
+
+Backward Substitution (Ux = y):
+Solution:
+x1 =     2.000000
+x2 =    -4.000000
+x3 =    -1.000000
+
+Verification (Ax = b):
+       8.000000 ≈     8.000000
+     -11.000000 ≈   -11.000000
+      -3.000000 ≈    -3.000000
+
+--------------------------------------
+
+Test Case 2:
+Original Augmented Matrix [A|b]:
+    1.0000    2.0000    3.0000   14.0000
+    2.0000    4.0000    6.0000   28.0000
+    3.0000    1.0000   -1.0000    2.0000
+
+Lower Triangular Matrix (L):
+  1.000000  0.000000  0.000000
+  2.000000  1.000000  0.000000
+  0.000000  0.000000  1.000000
+
+Upper Triangular Matrix (U):
+  1.000000  2.000000  3.000000
+  0.000000  0.000000  0.000000
+  0.000000  0.000000  0.000000
+
+System Analysis:
+Rank of coefficient matrix: 1
+→ Matrix is SINGULAR (det = 0)
+   System has either:
+   - No solution (inconsistent)
+   - Infinite solutions (dependent)
+   LU factorization cannot proceed.
+
+--------------------------------------
+```
+
+### Matrix Inverse Method
+
+#### Theory of Matrix Inverse Method
+The Matrix Inverse method solves Ax = b using the inverse of A: x = A⁻¹b
+
+**Process:**
+1. **Compute Determinant:** Check if det(A) ≠ 0
+2. **Find Cofactor Matrix:** Compute cofactor for each element
+3. **Compute Adjoint:** Adjoint = Transpose(Cofactor Matrix)
+4. **Calculate Inverse:** A⁻¹ = Adjoint(A) / det(A)
+5. **Solve:** x = A⁻¹·b
+
+**Formulas:**
+- Determinant: det(A) = Σ aᵢⱼ·Cᵢⱼ (expansion by any row/column)
+- Cofactor: Cᵢⱼ = (-1)ⁱ⁺ʲ·Mᵢⱼ (where Mᵢⱼ is minor)
+- Inverse: A⁻¹ = Adj(A) / det(A)
+
+**Limitations:**
+- Only works for non-singular matrices (det ≠ 0)
+- Computationally expensive for large matrices (O(n⁴))
+- Not recommended for large systems (use LU or iterative methods instead)
+
+**When to Use:**
+- Small systems (n ≤ 5)
+- Need the inverse matrix itself (not just solution)
+- Educational/theoretical purposes
+
+#### Code of Matrix Inverse Method
+
+**[📂 View Source Code](Solution%20of%20Linear%20equations/Inverse.cpp)**
+
+#### Input of Matrix Inverse Method
+**Format:**
+```
+T
+n
+a₁₁ a₁₂ ... a₁ₙ b₁
+a₂₁ a₂₂ ... a₂ₙ b₂
+...
+aₙ₁ aₙ₂ ... aₙₙ bₙ
+```
+**Parameters:**
+- `T`: Number of test cases
+- `n`: Matrix size
+- `[A|b]`: Augmented matrix
+
+**Example Input:** (`inverse_input.txt`)
+```
+2
+3
+2 1 -1 8
+-3 -1 2 -11
+-2 1 2 -3
+3
+1 2 3 14
+2 4 6 28
+3 1 -1 2
+```
+
+#### Output of Matrix Inverse Method
+**File:** `inverse_output.txt`
+```
+MATRIX INVERSE METHOD (ADJOINT METHOD)
+======================================
+
+Test Case 1:
+Original Augmented Matrix [A|b]:
+    2.0000    1.0000   -1.0000    8.0000
+   -3.0000   -1.0000    2.0000  -11.0000
+   -2.0000    1.0000    2.0000   -3.0000
+
+Determinant of A: -2.000000
+
+Adjoint Matrix (Adj(A)):
+   -4.000000   -3.000000    1.000000
+    2.000000    2.000000   -1.000000
+   -5.000000   -4.000000    1.000000
+
+Inverse Matrix (A^-1 = Adj(A)/det(A)):
+    2.000000    1.500000   -0.500000
+   -1.000000   -1.000000    0.500000
+    2.500000    2.000000   -0.500000
+
+Solution (x = A^-1 * b):
+x1 =     2.000000
+x2 =    -4.000000
+x3 =    -1.000000
+
+Verification (A * x):
+       8.000000 ≈     8.000000
+     -11.000000 ≈   -11.000000
+      -3.000000 ≈    -3.000000
+
+--------------------------------------
+
+Test Case 2:
+Original Augmented Matrix [A|b]:
+    1.0000    2.0000    3.0000   14.0000
+    2.0000    4.0000    6.0000   28.0000
+    3.0000    1.0000   -1.0000    2.0000
+
+Determinant of A: 0.000000
+
+→ Matrix is SINGULAR (det = 0)
+   Cannot find inverse. System may have:
+   - No solution (inconsistent)
+   - Infinite solutions (dependent)
+
+--------------------------------------
+```
+
+
 ## Usage Instructions
 
 ### Compilation
@@ -915,7 +1737,7 @@ Programs read from `input_*.txt` and write to `output_*.txt`:
 ```
 
 ### Input Files
-Each program has a corresponding input file:
+Each program has a corresponding input file in the `input/` folder:
 - `input_bisection.txt`
 - `input_newton-raphson.txt`
 - `input_regularfalsi.txt`
@@ -925,14 +1747,28 @@ Each program has a corresponding input file:
 - `input_divideddifference.txt`
 - `input_simpson1of3.txt`
 - `input_simpson3of8.txt`
+- `forward_input.txt`
+- `backward_input.txt`
+- `gauss_input.txt`
+- `gauss_jordan_input.txt`
+- `lu_input.txt`
+- `inverse_input.txt`
 - `input_lsr_Linear.txt`
 - `input_lsr_polynomial.txt`
 - `input_lsr_transcedental.txt`
+- `rk_input.txt`
 
 ### Output Files
-Results are written to corresponding output files:
+Results are written to corresponding output files in the `output/` folder:
 - `output_bisection.txt`
 - `output_newton-raphson.txt`
+- `forward_output.txt`
+- `backward_output.txt`
+- `gauss_output.txt`
+- `gauss_jordan_output.txt`
+- `lu_output.txt`
+- `inverse_output.txt`
+- `rk_output.txt`
 - etc.
 
 
@@ -940,8 +1776,13 @@ Results are written to corresponding output files:
 
 All programs include comprehensive error checking:
 - **Division by zero** protection
-- **Singular matrix** detection
-- **Invalid input** validation
+- **Singular matrix** detection (for linear systems)
+- **Rank analysis** for system consistency (unique/infinite/no solution)
+- **Partial pivoting** for numerical stability (Gauss-Jordan)
+- **Numerical instability** detection (RK method for ODEs)
+- **Invalid input** validation (matrix size, test cases, step size)
 - **Convergence** monitoring
 - **Iteration limits** to prevent infinite loops
+- **Overflow/underflow** detection
+- **File I/O** error handling
 

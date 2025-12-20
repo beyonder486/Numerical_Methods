@@ -1,0 +1,94 @@
+RUNGE-KUTTA METHOD (4th ORDER)
+=============================
+
+Test Case 1:
+Differential Equation: dy/dx = x + y
+Initial Condition: y(0) = 1
+Step size (h) = 0.2
+Target x = 1
+
+Step-by-step Computation:
+       x           y          k1          k2          k3          k4
+  0.0000      1.0000      0.2000      0.2400      0.2440      0.2888
+  0.2000      1.2428      0.2886      0.3374      0.3423      0.3970
+  0.4000      1.5836      0.3967      0.4564      0.4624      0.5292
+  0.6000      2.0442      0.5288      0.6017      0.6090      0.6906
+  0.8000      2.6510      0.6902      0.7792      0.7881      0.8878
+
+Final Result:
+y(1.0000) = 3.4365
+
+Status: ✓ Solution computed successfully
+
+--------------------------------------
+
+Test Case 2:
+Differential Equation: dy/dx = -50(y - cos(x)) [STIFF]
+Initial Condition: y(0.0000) = 1.0000
+Step size (h) = 0.1000
+Target x = 1.0000
+
+Step-by-step Computation:
+       x           y          k1          k2          k3          k4
+  0.0000      1.0000     -0.0000     -0.0062      0.0094     -0.0718
+  0.1000      0.9891      0.0297     -0.0757      0.1877     -0.9837
+  0.2000      0.8674      0.5633     -0.9007      2.7592    -13.3566
+  0.3000     -0.6453      8.0031    -12.0845     38.1346   -182.8414
+  0.4000    -21.1016    110.1135   -165.2733    523.1936  -2506.0721
+  0.5000   -301.1213   1509.9944  -2265.1168   7172.6612 -34353.5727
+  0.6000  -4139.2029  20700.1412 -31050.3581  98325.8901-470929.6118
+  0.7000 -56752.2707 283765.1775-425647.93201347884.8417-6455659.3718
+  0.8000-777988.99983889948.4825-5834922.907418477255.5675-88496329.7304
+  0.9000-10664941.654453324711.3802-79987067.2699253292379.3552-1213137185.8022
+
+Final Result:
+y(1.0000) = -146198583.3630
+
+Status: ✓ Solution computed successfully
+
+--------------------------------------
+
+Test Case 3:
+Differential Equation: dy/dx = -50(y - cos(x)) [STIFF]
+Initial Condition: y(0.0000) = 1.0000
+Step size (h) = 0.5000
+Target x = 1.0000
+
+Step-by-step Computation:
+       x           y          k1          k2          k3          k4
+  0.0000      1.0000     -0.0000     -0.7772      8.9377   -226.5024
+  0.5000    -34.0302    872.6955 -10039.6457 126364.6191-3158251.2133
+
+Final Result:
+y(1.0000) = -487488.7921
+
+Status: ✓ Solution computed successfully
+
+--------------------------------------
+
+Test Case 4:
+Differential Equation: dy/dx = y² [CAN BLOW UP]
+Initial Condition: y(0.0000) = 1.0000
+Step size (h) = 0.2000
+Target x = 2.0000
+
+Step-by-step Computation:
+       x           y          k1          k2          k3          k4
+  0.0000      1.0000      0.2000      0.2420      0.2513      0.3132
+  0.2000      1.2500      0.3125      0.3955      0.4192      0.5572
+  0.4000      1.6665      0.5554      0.7560      0.8360      1.2524
+  0.6000      2.4984      1.2484      1.9502      2.4131      4.8246
+  0.8000      4.9650      4.9303     11.0414     21.9900    145.3145
+  1.0000     41.0163    336.4667   8757.07923906494.76813052204366938.8159
+
+*** NUMERICAL INSTABILITY DETECTED ***
+Solution diverged at x = 1.2000
+Status: ✗ RK method failed for this problem/step size
+
+--------------------------------------
+
+Method Analysis:
+→ RK4 works well for non-stiff ODEs with reasonable step sizes
+→ Stiff equations require very small h or implicit methods
+→ Solutions can blow up or become undefined
+→ Singularities cause numerical instability

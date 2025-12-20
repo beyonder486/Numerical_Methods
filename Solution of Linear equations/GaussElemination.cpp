@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <iomanip>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 const double EPS = 1e-9;
 

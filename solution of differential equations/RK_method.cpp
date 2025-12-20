@@ -50,7 +50,7 @@ void solveRK(int testCase, string equation, double (*func)(double, double),
         double k3 = h * func(x0 + h / 2, y0 + k2 / 2);
         double k4 = h * func(x0 + h, y0 + k3);
 
-        out << fixed << setprecision(6);
+        out << fixed << setprecision(4);
         out << setw(8) << x0
             << setw(12) << y0
             << setw(12) << k1
